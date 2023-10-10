@@ -1,0 +1,31 @@
+.navMenu {
+    display: flex;
+    flex-wrap: nowrap;;
+    justify-content: space-between;
+}
+
+.navLink {
+    position: relative;
+    padding: 8px 24px;
+    font-size: var(--text-md);
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--primary-black);
+    font-weight: 500;
+    height: 100%;
+}
+
+.navLinkSelected {
+    color: var(--primary-white);
+    transition: .7s ease-out;
+}
+
+.navMarker {
+    left: 0;
+    position: absolute;
+    height: 100px;
+    width: 0;
+    background-color: var(--primary-black);
+    transition: 0.3s ease-out;
+}
