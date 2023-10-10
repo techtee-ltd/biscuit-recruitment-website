@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "@/components/Header/Header.module.scss";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Nav } from "react-bootstrap";
 
@@ -36,22 +37,28 @@ const Header = () => {
   const navItems = [
     {
       text: "Biscuit",
+      href: "/",
       ref,
     },
     {
       text: "Jobs",
+      href: "/jobs",
     },
     {
       text: "Our Story",
+      href: "/our-story",
     },
     {
       text: "Philosophy",
+      href: "/philosophy",
     },
     {
       text: "Journal",
+      href: "/journal",
     },
     {
       text: "Contact Us",
+      href: "/contact-us",
     },
   ];
 
@@ -59,17 +66,18 @@ const Header = () => {
     <Nav className={styles.navMenu}>
       <div className={styles.navMarker} style={markerStyle} />
       {navItems.map((item) => {
-        const { text, ref = null } = item;
+        const { text, href, ref = null } = item;
         const isSelected = selectedNav === text ? styles.navLinkSelected : "";
         return (
-          <Nav.Link
+          <Link
             key={text}
             ref={ref}
             onClick={handleLinkClick}
-            bsPrefix={`${styles.navLink} ${isSelected}`}
+            className={`${styles.navLink} ${isSelected}`}
+            href={href}
           >
             {text}
-          </Nav.Link>
+          </Link>
         );
       })}
     </Nav>
