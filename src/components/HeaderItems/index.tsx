@@ -33,8 +33,11 @@ const headerItems = [
 ];
 
 const HeaderItems = ({
-  CloseIcon = () => null,
-  handleOnClose = () => null,
+  CloseIcon,
+  handleOnClose,
+}: {
+  CloseIcon?: (props: any) => JSX.Element;
+  handleOnClose?: () => void;
 }) => {
   const pathname = usePathname();
   const [markerStyle, setMarkerStyle] = useState({

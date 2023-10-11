@@ -36,10 +36,7 @@ const Header = () => {
             drawerOpen && styles.headerDrawOpen
           }`}
         >
-          <HeaderItems
-            CloseIcon={CloseIcon}
-            handleOnClose={() => setDrawerOpen(false)}
-          />
+          <HeaderItems CloseIcon={CloseIcon} handleOnClose={toggleMenu} />
         </div>
       </Container>
 
