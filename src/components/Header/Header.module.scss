@@ -1,0 +1,70 @@
+.headerMenuMobile {
+    position: relative
+}
+
+.headerMenuButton {
+    height: 48px;
+    width: 48px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.headerDrawer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate3d(100vw, 0, 0);
+    background: var(--primary-white);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease-out;
+}
+
+.headerDrawOpen {
+    transform: translate3d(0vw, 0, 0);
+    transition: 0.3s ease-out;
+}
+
+.headerMenuDesktop {
+    display: none;
+}
+
+.headerLink {
+    position: relative;
+    padding: 8px 0;
+    font-size: var(--text-md);
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--primary-black);
+    font-weight: 500;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (min-width: 1198px) {
+    .headerMenuMobile {
+        display: none;
+    }
+
+    .headerMenuDesktop {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding: 0 20px;
+        width: 100%;
+        border-bottom: 1px solid var(--primary-black);
+    }
+
+    .headerDrawer {
+        display: none;
+    }
+}

@@ -1,0 +1,43 @@
+.headerLink {
+    position: relative;
+    padding: 8px 24px;
+    font-size: var(--text-sm);
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--primary-black);
+    font-weight: 500;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerLink:hover {
+    color: var(--primary-grey)
+}
+
+.headerLinkSelected, .headerLinkSelected:hover {
+    color: var(--primary-white);
+    transition: 0.7s ease-out;
+}
+
+.headerMarker {
+    position: absolute;
+    background-color: var(--primary-black);
+    transition: 0.3s ease-out;
+}
+
+@media (min-width: 1200px) {
+
+    .headerLink {
+        height: 100%;
+        font-size: var(--text-md);
+    }
+
+    .headerMarker {
+        left: 0;
+        height: 100px;
+        width: 0;
+    }
+}
