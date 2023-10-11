@@ -31,11 +31,7 @@ const Header = () => {
           </div>
         </Container>
 
-        <div
-          className={`${styles.headerDrawer} ${
-            drawerOpen && styles.headerDrawOpen
-          }`}
-        >
+        <div className={`${styles.headerDrawer} ${drawerOpen && styles.headerDrawOpen}`}>
           <HeaderItems CloseIcon={CloseIcon} handleOnClose={toggleMenu} />
         </div>
       </Container>
