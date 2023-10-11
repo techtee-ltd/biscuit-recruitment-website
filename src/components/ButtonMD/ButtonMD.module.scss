@@ -1,0 +1,9 @@
+.button {
+    font-size: var(--text-md);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.button:hover {
+    color: var(--primary-grey)
+}
