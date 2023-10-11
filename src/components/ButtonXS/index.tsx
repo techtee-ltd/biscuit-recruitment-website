@@ -1,8 +1,17 @@
 import { Button } from "react-bootstrap";
 import styles from "@/components/ButtonXS/ButtonXS.module.scss";
+import Link from "next/link";
 
 const ButtonXS = (props: any) => {
-  return <Button variant="link" bsPrefix={styles.button} {...props} />;
+  return (
+    <Button
+      as={Link}
+      variant="link"
+      bsPrefix={styles.button}
+      href="#"
+      {...props}
+    />
+  );
 };
 
 export default ButtonXS;
