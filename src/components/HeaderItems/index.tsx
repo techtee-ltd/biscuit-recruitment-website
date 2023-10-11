@@ -6,8 +6,8 @@ const HeaderItems = ({
   markerStyle,
   handleLinkClick,
   selectedNav,
-  CloseIcon = null,
-  handleOnClose = null,
+  CloseIcon = () => null,
+  handleOnClose = () => null,
 }) => {
   return (
     <>

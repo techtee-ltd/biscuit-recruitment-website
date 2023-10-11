@@ -27,13 +27,13 @@
     transition: 0.3s ease-out;
 }
 
-.headerMenuDesktop {
+.headerMenu {
     display: none;
 }
 
 .headerLink {
     position: relative;
-    padding: 8px 24px;
+    padding: 8px 0;
     font-size: var(--text-md);
     text-decoration: none;
     text-transform: uppercase;
@@ -47,25 +47,16 @@
 }
 
 @media (min-width: 1198px) {
-    .headerContainer {
-        margin: 0;
-        width: 100%;
-    }
 
     .headerMenuMobile {
         display: none;
-    }
-
-    .headerMenuDesktop {
-        display:block;
     }
 
     .headerMenu {
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
-        padding-left: 100px;
-        padding-right: 100px;
+        padding: 0 20px;
         width: 100%;
         border-bottom: 1px solid var(--primary-black);
     }

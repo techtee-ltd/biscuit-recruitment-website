@@ -16,6 +16,7 @@ const Header = () => {
     height: "0px",
   });
   const [selectedNav, setSelectedNav] = useState("");
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleStyleUpdates = (target: {
     offsetTop: number;
@@ -73,15 +74,11 @@ const Header = () => {
     },
   ];
 
-  const [drawerOpen, setDrawerOpen] = useState(false);
-
-  console.log(selectedNav);
-
   return (
     <>
       {/* mobile header */}
       <Container className={styles.headerMenuMobile}>
-        <Container className="d-flex justify-content-between">
+        <Container className="d-flex justify-content-between align-items-center">
           <Link
             href="/"
             passHref
@@ -117,7 +114,7 @@ const Header = () => {
       </Container>
 
       {/* desktop header */}
-      <Nav bsPrefix={styles.headerMenu} className={styles.headerMenuDesktop}>
+      <Nav bsPrefix={styles.headerMenu}>
         <HeaderItems
           headerItems={headerItems}
           markerStyle={markerStyle}
