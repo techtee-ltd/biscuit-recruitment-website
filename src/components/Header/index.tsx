@@ -4,92 +4,26 @@ import styles from "@/components/Header/Header.module.scss";
 import HeaderItems from "@/components/HeaderItems";
 import CloseIcon from "@/components/Icons/CloseIcon";
 import HamburgerMenu from "@/components/Icons/HamburgerMenu";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Container, Nav } from "react-bootstrap";
 
 const Header = () => {
-  const [markerStyle, setMarkerStyle] = useState({
-    top: "0px",
-    left: "0px",
-    width: "0px",
-    height: "0px",
-  });
-  const [selectedNav, setSelectedNav] = useState("");
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const handleStyleUpdates = (target: {
-    offsetTop: number;
-    offsetLeft: number;
-    offsetWidth: number;
-    offsetHeight: number;
-    id: string;
-  }) => {
-    const { offsetTop, offsetLeft, offsetWidth, offsetHeight, id } = target;
-    setMarkerStyle({
-      top: `${offsetTop}px`,
-      left: `${offsetLeft}px`,
-      width: `${offsetWidth}px`,
-      height: `${offsetHeight}px`,
-    });
-    setSelectedNav(id);
+  const toggleMenu = () => {
+    setDrawerOpen((prevState) => !prevState);
   };
-
-  const handleLinkClick = (e: any) => {
-    handleStyleUpdates(e.target);
-  };
-
-  // To set Biscuit as the initial selected value
-  const ref = useRef(null);
-  useEffect(() => {
-    if (!ref.current) return;
-    handleStyleUpdates(ref.current);
-  }, []);
-
-  const headerItems = [
-    {
-      text: "Biscuit",
-      href: "/",
-      ref,
-    },
-    {
-      text: "Jobs",
-      href: "/jobs",
-    },
-    {
-      text: "Our Story",
-      href: "/our-story",
-    },
-    {
-      text: "Philosophy",
-      href: "/philosophy",
-    },
-    {
-      text: "Journal",
-      href: "/journal",
-    },
-    {
-      text: "Contact Us",
-      href: "/contact-us",
-    },
-  ];
 
   return (
     <>
       {/* mobile header */}
       <Container className={styles.headerMenuMobile}>
         <Container className="d-flex justify-content-between align-items-center">
-          <Link
-            href="/"
-            passHref
-            className={`${styles.headerLink} ${styles.headerMenuTitle}`}
-          >
+          <p className={`${styles.headerLink} ${styles.headerMenuTitle}`}>
             Biscuit
-          </Link>
+          </p>
           <div
-            onClick={() => {
-              setDrawerOpen(true);
-            }}
+            onClick={toggleMenu}
             aria-controls="basic-navbar-nav"
             className={styles.headerMenuButton}
           >
@@ -103,10 +37,6 @@ const Header = () => {
           }`}
         >
           <HeaderItems
-            headerItems={headerItems}
-            markerStyle={markerStyle}
-            handleLinkClick={handleLinkClick}
-            selectedNav={selectedNav}
             CloseIcon={CloseIcon}
             handleOnClose={() => setDrawerOpen(false)}
           />
@@ -114,13 +44,8 @@ const Header = () => {
       </Container>
 
       {/* desktop header */}
-      <Nav bsPrefix={styles.headerMenu}>
-        <HeaderItems
-          headerItems={headerItems}
-          markerStyle={markerStyle}
-          handleLinkClick={handleLinkClick}
-          selectedNav={selectedNav}
-        />
+      <Nav bsPrefix={styles.headerMenuDesktop}>
+        <HeaderItems />
       </Nav>
     </>
   );

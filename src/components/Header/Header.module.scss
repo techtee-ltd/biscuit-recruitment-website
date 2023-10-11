@@ -1,3 +1,7 @@
+.headerMenuMobile {
+    position: relative
+}
+
 .headerMenuButton {
     height: 48px;
     width: 48px;
@@ -27,7 +31,7 @@
     transition: 0.3s ease-out;
 }
 
-.headerMenu {
+.headerMenuDesktop {
     display: none;
 }
 
@@ -52,7 +56,7 @@
         display: none;
     }
 
-    .headerMenu {
+    .headerMenuDesktop {
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
