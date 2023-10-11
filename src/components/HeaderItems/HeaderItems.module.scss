@@ -13,7 +13,11 @@
     align-items: center;
 }
 
-.headerLinkSelected {
+.headerLink:hover {
+    color: var(--primary-grey)
+}
+
+.headerLinkSelected, .headerLinkSelected:hover {
     color: var(--primary-white);
     transition: 0.7s ease-out;
 }

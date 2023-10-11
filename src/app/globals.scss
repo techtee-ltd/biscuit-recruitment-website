@@ -1,16 +1,13 @@
 
 $font-family-base: "Helvetica Neue", sans-serif;
 
-// $theme-colors: (
-//   "primary": #1D1D1B,
-// );
-
 @import '~bootstrap/scss/bootstrap';
 
 :root {
   // colors
     --primary-black: #1D1D1B;
     --primary-white: #ffffff;
+    --primary-grey: #A5A3A3;
 
   //fonts
     --font-family: "Helvetica Neue", sans-serif;
