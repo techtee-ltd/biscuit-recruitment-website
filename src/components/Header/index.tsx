@@ -1,12 +1,12 @@
 "use client";
 
+import FooterLinks from "@/components/FooterLinks";
 import styles from "@/components/Header/Header.module.scss";
 import HeaderItems from "@/components/HeaderItems";
 import CloseIcon from "@/components/Icons/CloseIcon";
 import HamburgerMenu from "@/components/Icons/HamburgerMenu";
 import { useState } from "react";
 import { Container, Nav } from "react-bootstrap";
-import FooterLinks from "@/components/FooterLinks";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -42,7 +42,7 @@ const Header = () => {
               <HeaderItems CloseIcon={CloseIcon} handleOnClose={toggleMenu} />
             </div>
             <Container fluid style={{ padding: "16px 24px" }}>
-              <FooterLinks showPrivacyPolicy={true} />
+              <FooterLinks />
             </Container>
           </div>
         </div>
