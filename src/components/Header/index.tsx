@@ -42,7 +42,7 @@ const Header = () => {
               <HeaderItems CloseIcon={CloseIcon} handleOnClose={toggleMenu} />
             </div>
             <Container fluid style={{ padding: "16px 24px" }}>
-              <FooterLinks />
+              <FooterLinks showPrivacyPolicy={true} />
             </Container>
           </div>
         </div>
