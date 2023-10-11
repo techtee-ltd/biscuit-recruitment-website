@@ -6,6 +6,7 @@ import CloseIcon from "@/components/Icons/CloseIcon";
 import HamburgerMenu from "@/components/Icons/HamburgerMenu";
 import { useState } from "react";
 import { Container, Nav } from "react-bootstrap";
+import FooterLinks from "@/components/FooterLinks";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -31,8 +32,19 @@ const Header = () => {
           </div>
         </Container>
 
-        <div className={`${styles.headerDrawer} ${drawerOpen && styles.headerDrawOpen}`}>
-          <HeaderItems CloseIcon={CloseIcon} handleOnClose={toggleMenu} />
+        <div
+          className={`${styles.headerDrawer} ${
+            drawerOpen && styles.headerDrawOpen
+          }`}
+        >
+          <div className={styles.headerDrawerWrapper}>
+            <div>
+              <HeaderItems CloseIcon={CloseIcon} handleOnClose={toggleMenu} />
+            </div>
+            <Container fluid style={{ padding: "16px 24px" }}>
+              <FooterLinks />
+            </Container>
+          </div>
         </div>
       </Container>
 
