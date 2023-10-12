@@ -21,7 +21,11 @@ const StickyFooter = () => {
       <Stack gap={5} direction="horizontal" className={styles.footerRight}>
         {Object.keys(links).map((key: string) => {
           const href = links[key];
-          return <ButtonMD href={href}>{key}</ButtonMD>;
+          return (
+            <ButtonMD key={key} href={href}>
+              {key}
+            </ButtonMD>
+          );
         })}
       </Stack>
     </Navbar>

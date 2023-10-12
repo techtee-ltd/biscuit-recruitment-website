@@ -12,7 +12,11 @@ const FooterLinks = ({ showPrivacyPolicy = false }) => {
       {Object.keys(links).map((key: string) => {
         const href = links[key];
         if (!href) return;
-        return <ButtonXS href={href}>{key}</ButtonXS>;
+        return (
+          <ButtonXS key={key} href={href}>
+            {key}
+          </ButtonXS>
+        );
       })}
     </Stack>
   );
