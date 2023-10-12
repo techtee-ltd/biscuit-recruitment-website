@@ -11,16 +11,16 @@ const Footer = () => {
       <Row>
         <div className={styles.border} />
       </Row>
-      <div>
+      <Container fluid>
         <Row className={styles.footerContainer}>
-          <Col xs={12} md={6} lg={4}>
+          <Col xs={12} md={6} lg={2}>
             <FooterLinks />
           </Col>
-          <Col xs={12} md={6} lg={7}>
+          <Col xs={12} md={6} lg={10} xl={9}>
             <FooterInfo />
           </Col>
         </Row>
-      </div>
+      </Container>
     </Container>
   );
 };

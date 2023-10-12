@@ -16,7 +16,7 @@ const FooterLinks = ({ showPrivacyPolicy = false }) => {
     ...(showPrivacyPolicy ? [{ text: "Privacy Policy", href: "#" }] : []),
   ];
   return (
-    <Stack gap={2}>
+    <Stack gap={1}>
       {data.map(({ text, href }) => (
         <ButtonXS href={href}>{text}</ButtonXS>
       ))}
