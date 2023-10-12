@@ -1,19 +1,21 @@
 import ButtonMD from "@/components/ButtonMD";
 import CTAArrowIcon from "@/components/Icons/CTAArrowIcon";
 import styles from "@/components/StickyFooter/StickyFooter.module.scss";
-import { Navbar } from "react-bootstrap";
+import { Col, Container, Navbar, Row, Stack } from "react-bootstrap";
 
 const StickyFooter = () => (
   <Navbar fixed="bottom" className={styles.footer}>
     <ButtonMD href="/jobs">
-      <CTAArrowIcon />
-      Find a job
+      <Stack gap={3} direction="horizontal">
+        <CTAArrowIcon />
+        Find a job
+      </Stack>
     </ButtonMD>
-    <div className={styles.footerRight}>
+    <Stack gap={5} direction="horizontal" className={styles.footerRight}>
       <ButtonMD href="/jobs">Linkedin</ButtonMD>
       <ButtonMD href="/jobs">Instagram</ButtonMD>
       <ButtonMD href="/jobs">Email</ButtonMD>
-    </div>
+    </Stack>
   </Navbar>
 );
 

@@ -27,9 +27,9 @@ const FooterInfo = () => {
   return (
     <Container fluid>
       <Row className={styles.columns}>
-        {office.map(({ icon = null, text }) => {
+        {office.map(({ icon = null, text }, idx) => {
           return (
-            <Col xs={12} lg={4}>
+            <Col key={text[0] + idx} xs={12} lg={4}>
               {text.map((i, index) => {
                 const showIcon = index === 0 ? icon : <div />;
                 const textStyle = `${styles.text} ${
@@ -38,7 +38,7 @@ const FooterInfo = () => {
                 const textContent =
                   index === 2 ? <a href={`tel:${i}`}>{i}</a> : i;
                 return (
-                  <Row className="d-flex align-items-center">
+                  <Row key={index} className="d-flex align-items-center">
                     <Col xs={1}>{showIcon}</Col>
                     <Col className={textStyle}>{textContent}</Col>
                   </Row>
