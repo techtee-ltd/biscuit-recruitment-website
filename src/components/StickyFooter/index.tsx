@@ -1,22 +1,31 @@
 import ButtonMD from "@/components/ButtonMD";
 import CTAArrowIcon from "@/components/Icons/CTAArrowIcon";
 import styles from "@/components/StickyFooter/StickyFooter.module.scss";
-import { Col, Container, Navbar, Row, Stack } from "react-bootstrap";
+import { biscuitLinks } from "@/constants";
+import { Navbar, Stack } from "react-bootstrap";
 
-const StickyFooter = () => (
-  <Navbar fixed="bottom" className={styles.footer}>
-    <ButtonMD href="/jobs">
-      <Stack gap={3} direction="horizontal">
-        <CTAArrowIcon />
-        Find a job
+const StickyFooter = () => {
+  const links: any = (({ LinkedIn, Instagram, Email }) => ({
+    LinkedIn,
+    Instagram,
+    Email,
+  }))(biscuitLinks); // https://stackoverflow.com/questions/17781472/how-to-get-a-subset-of-a-javascript-objects-properties
+  return (
+    <Navbar fixed="bottom" className={styles.footer}>
+      <ButtonMD href="/jobs">
+        <Stack gap={3} direction="horizontal">
+          <CTAArrowIcon />
+          Find a job
+        </Stack>
+      </ButtonMD>
+      <Stack gap={5} direction="horizontal" className={styles.footerRight}>
+        {Object.keys(links).map((key: string) => {
+          const href = links[key];
+          return <ButtonMD href={href}>{key}</ButtonMD>;
+        })}
       </Stack>
-    </ButtonMD>
-    <Stack gap={5} direction="horizontal" className={styles.footerRight}>
-      <ButtonMD href="/jobs">Linkedin</ButtonMD>
-      <ButtonMD href="/jobs">Instagram</ButtonMD>
-      <ButtonMD href="/jobs">Email</ButtonMD>
-    </Stack>
-  </Navbar>
-);
+    </Navbar>
+  );
+};
 
 export default StickyFooter;

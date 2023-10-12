@@ -1,25 +1,19 @@
-"use client";
-
 import ButtonXS from "@/components/ButtonXS";
+import { biscuitLinks } from "@/constants";
 import { Stack } from "react-bootstrap";
 
 const FooterLinks = ({ showPrivacyPolicy = false }) => {
-  const data = [
-    { text: "Twitter", href: "https://twitter.com/biscuitLdn" },
-    { text: "Facebook", href: " https://www.facebook.com/biscuitrecruitment" },
-    { text: "Instagram", href: "https://www.instagram.com/biscuitrecruitment" },
-    {
-      text: "LinkedIn",
-      href: "https://www.linkedin.com/company/biscuit-recruitment",
-    },
-    { text: "Email", href: "mailtto:info@biscuitrecruitment.com" },
-    ...(showPrivacyPolicy ? [{ text: "Privacy Policy", href: "#" }] : []),
-  ];
+  const links = { ...biscuitLinks };
+  if (!showPrivacyPolicy) {
+    links["Privacy Policy"] = "";
+  }
   return (
     <Stack gap={1}>
-      {data.map(({ text, href }) => (
-        <ButtonXS href={href}>{text}</ButtonXS>
-      ))}
+      {Object.keys(links).map((key: string) => {
+        const href = links[key];
+        if (!href) return;
+        return <ButtonXS href={href}>{key}</ButtonXS>;
+      })}
     </Stack>
   );
 };
