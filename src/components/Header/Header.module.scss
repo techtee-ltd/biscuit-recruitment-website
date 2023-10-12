@@ -24,6 +24,14 @@
     display: flex;
     flex-direction: column;
     transition: 0.3s ease-out;
+    z-index: 1040;
+}
+
+.headerDrawerWrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .headerDrawOpen {
@@ -50,7 +58,7 @@
     align-items: center;
 }
 
-@media (min-width: 1198px) {
+@media (min-width: 1200px) {
     .headerMenuMobile {
         display: none;
     }

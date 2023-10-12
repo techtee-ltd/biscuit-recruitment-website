@@ -7,6 +7,8 @@ $font-family-base: "Helvetica Neue", sans-serif;
     --primary-black: #1D1D1B;
     --primary-white: #ffffff;
     --primary-grey: #A5A3A3;
+    --primary-green: #5C8984;
+    --primary-pink: #F2D8D8;
 
   //fonts
     --font-family: "Helvetica Neue", sans-serif;
@@ -24,4 +26,9 @@ $font-family-base: "Helvetica Neue", sans-serif;
 
 body {
   margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-black)
 }

@@ -1,0 +1,25 @@
+.footer {
+    background-color: var(--primary-white);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 24px;
+}
+
+.footerRight {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    
+    .footer {
+        padding-left: 34px;
+        padding-right: 34px;
+        padding-bottom: 24px;
+    }
+
+    .footerRight {
+        display: flex;
+    }
+}

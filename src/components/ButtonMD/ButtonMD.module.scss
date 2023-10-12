@@ -1,0 +1,15 @@
+.button {
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.button:hover {
+    color: var(--primary-grey)
+}
+
+@media only screen and (min-width: 1200px) {
+    .button {
+        font-size: var(--text-md)
+    }
+}
