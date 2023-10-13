@@ -1,7 +1,3 @@
-"use client";
-
-import StickyFooter from "@/components/StickyFooter";
-
 const Home = () => {
   return (
     <>
@@ -19,7 +15,6 @@ const Home = () => {
           width: "100%",
         }}
       />
-      <StickyFooter />
     </>
   );
 };
