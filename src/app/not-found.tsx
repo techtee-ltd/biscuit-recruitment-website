@@ -7,7 +7,7 @@ const NotFound = () => (
       <div className={styles.textDescription}>Oops!</div>
       <div className={styles.textDescription}>This page does not exist.</div>
     </div>
-    <div className={styles.textJob}>Let's look for a job, huh?</div>
+    <div className={styles.textJob}>Let&apos;s look for a job, huh?</div>
   </div>
 );
 
