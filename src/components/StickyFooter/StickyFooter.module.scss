@@ -1,24 +1,26 @@
-.footer {
+.navbarContainer {
+    width: 100%;
     background-color: var(--primary-white);
+    padding: 0 !important;
+}
+
+.footer {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px 16px 40px;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 24px;
+    padding: 20px 16px 24px;
 }
 
 .footerRight {
-    display: none;
+    display: none !important;
 }
 
 @media (min-width: 1200px) {
-    
     .footer {
         padding: 24px 40px 48px;
     }
 
     .footerRight {
-        display: flex;
+        display: flex !important;
     }
 }

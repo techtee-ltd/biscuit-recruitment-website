@@ -25,7 +25,12 @@ const Home = () => {
           priority={true}
         />
       </div>
-      <StickyFooter />
+      <div
+        style={{
+          height: "100px",
+          width: "100%",
+        }}
+      />
     </>
   );
 };
