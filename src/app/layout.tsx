@@ -1,7 +1,8 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import StickyFooter from "@/components/StickyFooter";
 import type { Metadata } from "next";
 import "./globals.scss";
-import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,13 +14,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="en">
       <body>
         <Header />
         {children}
         <Footer />
+
+        <StickyFooter />
       </body>
     </html>
   );
