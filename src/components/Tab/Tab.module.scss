@@ -1,4 +1,4 @@
-.base {
+.base, .base[type="button"]:disabled {
     background-color: var(--primary-white);
     color: var(--primary-black);
     border: 1px solid var(--primary-black);
@@ -7,21 +7,12 @@
     font-size: var(--text-xs);
 }
 
-.base:hover {
+.base:hover, .base[type="button"]:active {
     background-color: var(--primary-black);
     color: var(--primary-white);
     border: 1px solid transparent;
 }
 
-.base[type="button"]:active {
-    background-color: var(--primary-black);
-    color: var(--primary-white);
-    border: 1px solid transparent;
-}
-
-.one {
-    
-}
 
 .two {
     text-transform: uppercase;
@@ -35,4 +26,8 @@
 .selected {
     background-color: var(--primary-black);
     color: var(--primary-white)
+}
+
+.readOnly {
+    pointer-events: none;
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "@/components/Tab/Tab.module.scss";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Button } from "react-bootstrap";
@@ -12,12 +14,15 @@ const tab = cva(styles.base, {
     },
     state: {
       selected: styles.selected,
+      readOnly: styles.readOnly,
     },
   },
 });
 
-const Tab = ({ children, variant, state }: ButtonProps) => (
-  <Button className={tab({ variant, state })}>{children}</Button>
+const Tab = ({ children, variant, state, ...props }: ButtonProps) => (
+  <Button {...props} className={tab({ variant, state })}>
+    {children}
+  </Button>
 );
 
 export default Tab;
