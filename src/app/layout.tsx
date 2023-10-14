@@ -20,7 +20,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-
         <StickyFooter />
       </body>
     </html>
