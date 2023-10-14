@@ -18,11 +18,11 @@ const Header = () => {
   return (
     <>
       {/* mobile header */}
-      <Container className={styles.headerMenuMobile}>
-        <Container className="d-flex justify-content-between align-items-center">
-          <p className={`${styles.headerLink} ${styles.headerMenuTitle}`}>
+      <Container fluid className={styles.headerMenuMobile}>
+        <div className="d-flex justify-content-between align-items-center">
+          <span className={`${styles.headerLink} ${styles.headerMenuTitle}`}>
             Biscuit
-          </p>
+          </span>
           <div
             onClick={toggleMenu}
             aria-controls="basic-navbar-nav"
@@ -30,7 +30,7 @@ const Header = () => {
           >
             <HamburgerMenu />
           </div>
-        </Container>
+        </div>
 
         <div
           className={`${styles.headerDrawer} ${
