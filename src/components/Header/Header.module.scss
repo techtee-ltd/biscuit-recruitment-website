@@ -1,5 +1,6 @@
 .headerMenuMobile {
-    position: relative
+    position: relative;
+    padding: 0 16px !important;
 }
 
 .headerMenuButton {
@@ -67,7 +68,7 @@
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
-        padding: 0 20px;
+        padding: 0 40px;
         width: 100%;
         border-bottom: 1px solid var(--primary-black);
     }
