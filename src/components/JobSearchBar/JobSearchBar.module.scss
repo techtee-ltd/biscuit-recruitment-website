@@ -1,0 +1,18 @@
+.searchBar {
+    border: none;
+    border-radius: 0,;
+    border-bottom: 1px solid var(--primary-black)
+}
+
+.searchBar::placeholder {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: var(--text-xs)
+}
+
+.searchBar:focus {
+    color: var(--primary-black);
+    border-bottom: 1px solid var(--primary-black);
+    outline: none;
+    box-shadow:none;
+}

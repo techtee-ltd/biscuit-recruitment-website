@@ -1,0 +1,36 @@
+.jobsPage {
+    padding: 16px 0 100px;
+}
+
+.jobSearchBar {
+    padding: 0 16px;
+}
+
+.jobsTypeFilter {
+    margin: 24px 0;
+    padding-left: 16px;
+}
+
+.jobCards {
+    padding: 0 16px;
+}
+
+@media (min-width: 1200px) {
+
+    .jobsPage {
+        padding: 16px 0 150px;
+    }
+
+    .jobSearchBar {
+        padding: 0 40px;
+    }
+
+    .jobsTypeFilter {
+        padding-left: 40px;
+    }
+
+    .jobCards {
+        padding: 0 40px;
+    }
+    
+}

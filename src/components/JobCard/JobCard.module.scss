@@ -1,0 +1,25 @@
+.jobCard {
+    padding: 40px 24px;
+    border-radius: 16px;
+    border: 1px solid var(--primary-black);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.circle {
+    height: 20px;
+    width: 20px;
+    border-radius: 100px;
+}
+
+.jobType {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+}
+
+.title {
+    font-size: var(--text-sm)
+}
