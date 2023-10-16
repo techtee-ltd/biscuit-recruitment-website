@@ -1,0 +1,41 @@
+.jobsPage {
+    font-size: var(--text-xs);
+    padding: 16px;
+    padding-bottom: 100px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.textSubtitle {
+    font-weight: 500;
+}
+
+.shareTablet {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    
+    .jobsPage {
+        padding-top: 64px;
+    }
+
+    .shareMobile {
+        display: none;
+    }
+
+    .shareTablet {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    
+    .jobsPage {
+        padding: 40px;
+    }
+}

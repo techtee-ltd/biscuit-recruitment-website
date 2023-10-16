@@ -2,6 +2,7 @@
 
 import styles from "@/components/JobCard/JobCard.module.scss";
 import Tab from "@/components/Tab";
+import Link from "next/link";
 import { Stack } from "react-bootstrap";
 
 const JobCard = () => (
@@ -26,7 +27,9 @@ const JobCard = () => (
         utmost support to the brilliant MD based in the London office.{" "}
       </div>
     </Stack>
-    <Tab variant="full">See More</Tab>
+    <Link href="/jobs/1">
+      <Tab variant="full">See More</Tab>
+    </Link>
   </div>
 );
 
