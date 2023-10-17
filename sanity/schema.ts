@@ -1,60 +1,5 @@
-const jobDetails = {
-  name: "jobDetails",
-  type: "object",
-  title: "Job Details",
-  fields: [
-    {
-      name: "jobType",
-      type: "string",
-      title: "Job Type",
-      options: {
-        list: [
-          { title: "Contract", value: "Contract" },
-          //... Add more types if needed
-        ],
-      },
-    },
-  ],
-};
-
-const jobResponsibilities = {
-  name: "jobResponsibilities",
-  type: "object",
-  title: "Job Responsibilities",
-  fields: [
-    {
-      name: "tasks",
-      type: "array",
-      of: [{ type: "string" }],
-      title: "Responsibilities",
-      description: "List the tasks and duties for the job.",
-      validation: (Rule: any) =>
-        Rule.required()
-          .min(1)
-          .error("At least one responsibility is required."),
-    },
-  ],
-};
-
-const jobQualifications = {
-  name: "jobQualifications",
-  type: "object",
-  title: "Job Qualifications",
-  fields: [
-    {
-      name: "requirements",
-      type: "array",
-      of: [{ type: "string" }],
-      title: "Qualifications",
-      description: "List the qualifications needed for the job.",
-      validation: (Rule: any) =>
-        Rule.required().min(1).error("At least one qualification is required."),
-    },
-  ],
-};
-
-const jobPost = {
-  name: "jobPost",
+const job = {
+  name: "job",
   title: "Jobs",
   type: "document",
   fields: [
@@ -66,8 +11,8 @@ const jobPost = {
       validation: (Rule: any) => Rule.required().error("A title is required."),
     },
     {
-      name: "jobDescription",
-      type: "string",
+      name: "description",
+      type: "text",
       title: "Job Description",
       description: "Provide a brief summary about the job.",
       validation: (Rule: any) =>
@@ -77,23 +22,40 @@ const jobPost = {
           .warning("Description is too long!"),
     },
     {
-      name: "details",
-      type: "jobDetails",
-      title: "Job Details",
+      name: "type",
+      type: "string",
+      title: "Job Type",
+      options: {
+        list: [
+          { title: "Contract", value: "contract" },
+          { title: "Temporary", value: "temporary" },
+          { title: "Permanent", value: "permanent" },
+        ],
+      },
     },
     {
       name: "responsibilities",
-      type: "jobResponsibilities",
-      title: "Responsibilities",
+      type: "array",
+      of: [{ type: "string" }],
+      title: "Job Responsibilities",
+      description: "List the tasks and duties for the job.",
+      validation: (Rule: any) =>
+        Rule.required()
+          .min(1)
+          .error("At least one responsibility is required."),
     },
     {
       name: "qualifications",
-      type: "jobQualifications",
-      title: "Qualifications",
+      type: "array",
+      of: [{ type: "string" }],
+      title: "Job Qualifications",
+      description: "List the qualifications needed for the job.",
+      validation: (Rule: any) =>
+        Rule.required().min(1).error("At least one qualification is required."),
     },
   ],
 };
 
-const schemas = [jobPost, jobDetails, jobResponsibilities, jobQualifications];
+const schemas = [job];
 
 export default schemas;

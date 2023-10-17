@@ -3,11 +3,11 @@
 import { Col, Row } from "react-bootstrap";
 import JobCard from "@/components/JobCard";
 
-const JobCardList = () => (
+const JobCardList = ({ jobPosts }) => (
   <Row className="row-gap-4">
-    {Array.from({ length: 10 }).map((i) => (
+    {jobPosts.map((jobPost) => (
       <Col xs={12} md={6} lg={4}>
-        <JobCard />
+        <JobCard jobPost={jobPost} />
       </Col>
     ))}
   </Row>

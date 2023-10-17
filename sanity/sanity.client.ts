@@ -5,6 +5,7 @@ const config: ClientConfig = {
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "",
   apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2023-10-01",
   useCdn: false,
+  perspective: "published",
 };
 
 const client = createClient(config);

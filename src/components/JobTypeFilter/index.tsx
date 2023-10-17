@@ -4,10 +4,11 @@ import styles from "@/components/JobTypeFilter/JobTypeFilter.module.scss";
 import Tab from "@/components/Tab/index";
 import { jobTypes } from "@/constants";
 import { jobType } from "@/types";
+import { Dispatch, SetStateAction } from "react";
 
 type JobTypeFilterProps = {
   activeType?: jobType;
-  onClick: (prop: jobType) => void;
+  onClick: Dispatch<SetStateAction<string>>;
 };
 
 const JobTypeFilter = ({
@@ -22,7 +23,9 @@ const JobTypeFilter = ({
             key={jobType}
             variant="uppercase"
             state={activeType === jobType && "selected"}
-            onClick={() => onClick(jobType)}
+            onClick={() => {
+              onClick(jobType);
+            }}
           >
             {jobType}
           </Tab>

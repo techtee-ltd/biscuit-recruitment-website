@@ -5,32 +5,29 @@ import Tab from "@/components/Tab";
 import Link from "next/link";
 import { Stack } from "react-bootstrap";
 
-const JobCard = () => (
-  <div className={styles.jobCard}>
-    <Stack gap={2}>
-      <div className={styles.jobType}>
-        <div
-          className={styles.circle}
-          style={{
-            backgroundColor: "red",
-          }}
-        />
-        Temporary
-      </div>
-      <div className={styles.title}>
-        Executive Assistant - Successful Boutique Investment Firm,
-      </div>
+const JobCard = ({ jobPost }) => {
+  const { _id, title, description, type } = jobPost;
+  return (
+    <div className={styles.jobCard}>
+      <Stack gap={2}>
+        <div className={styles.jobType}>
+          <div
+            className={styles.circle}
+            style={{
+              backgroundColor: "red",
+            }}
+          />
+          {type}
+        </div>
+        <div className={styles.title}>{title}</div>
 
-      <div>
-        Our client is an established and highly successful investment firm that
-        is headquarted in the US; they are now looking for an EA to provide
-        utmost support to the brilliant MD based in the London office.{" "}
-      </div>
-    </Stack>
-    <Link href="/jobs/1">
-      <Tab variant="full">See More</Tab>
-    </Link>
-  </div>
-);
+        <div>{description}</div>
+      </Stack>
+      <Link href={`/jobs/${_id}`}>
+        <Tab variant="full">See More</Tab>
+      </Link>
+    </div>
+  );
+};
 
 export default JobCard;
