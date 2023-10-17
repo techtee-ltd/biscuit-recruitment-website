@@ -6,34 +6,52 @@ import JobSearchBar from "@/components/JobSearchBar";
 import JobTypeFilter from "@/components/JobTypeFilter";
 import { jobTypes } from "@/constants";
 import { useEffect, useState } from "react";
+import { Form } from "react-bootstrap";
 import { getAllJobs } from "../../../../sanity/sanity.query";
 
+const debounce = (func: (...args: any[]) => any, wait: number) => {
+  let timeoutId: NodeJS.Timeout | null = null;
+
+  return (...args: any[]): void => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+
+    timeoutId = setTimeout(() => func(...args), wait);
+  };
+};
+
 const JobsPage = () => {
+  const [searchValue, setSearchValue] = useState("");
   const [activeType, setActiveType] = useState(jobTypes.all);
   const [jobPosts, setJobPosts] = useState([]);
+  const fetchData = async () => {
+    const response = await getAllJobs({
+      type: activeType,
+      searchValue: searchValue,
+    });
+    setJobPosts(response);
+  };
+  const debouncedFetchData = debounce(fetchData, 300);
 
   useEffect(() => {
-    async function fetchData() {
-      const response = await getAllJobs(activeType);
-      setJobPosts(response);
-    }
-    fetchData();
-  }, [activeType]);
-
-  console.log("jobPosts ", jobPosts);
+    debouncedFetchData();
+  }, [activeType, searchValue]);
 
   return (
-    <div className={styles.jobsPage}>
-      <div className={styles.jobSearchBar}>
-        <JobSearchBar />
+    <Form>
+      <div className={styles.jobsPage}>
+        <div className={styles.jobSearchBar}>
+          <JobSearchBar onChange={setSearchValue} />
+        </div>
+        <div className={styles.jobsTypeFilter}>
+          <JobTypeFilter onClick={setActiveType} activeType={activeType} />
+        </div>
+        <div className={styles.jobCards}>
+          <JobCardList jobPosts={jobPosts} />
+        </div>
       </div>
-      <div className={styles.jobsTypeFilter}>
-        <JobTypeFilter onClick={setActiveType} activeType={activeType} />
-      </div>
-      <div className={styles.jobCards}>
-        <JobCardList jobPosts={jobPosts} />
-      </div>
-    </div>
+    </Form>
   );
 };
 

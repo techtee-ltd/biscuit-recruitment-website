@@ -1,18 +1,20 @@
 "use client";
 
-import { Form } from "react-bootstrap";
-import styles from "@/components/JobSearchBar/JobSearchBar.module.scss";
-import FormControl from "../FormControl";
+import FormControl from "@/components/FormControl";
+import { Dispatch, SetStateAction } from "react";
 
-const JobSearchBar = () => (
-  <Form>
-    <FormControl
-      variant="uppercase"
-      type="text"
-      id="jobSearch"
-      placeholder="Search"
-    />
-  </Form>
+const JobSearchBar = ({
+  onChange,
+}: {
+  onChange: Dispatch<SetStateAction<string>>;
+}) => (
+  <FormControl
+    variant="uppercase"
+    type="text"
+    id="jobSearch"
+    placeholder="Search"
+    onChange={(e: any) => onChange(() => e.target.value)}
+  />
 );
 
 export default JobSearchBar;

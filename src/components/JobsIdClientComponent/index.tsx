@@ -4,10 +4,11 @@ import ArrowIcon from "@/components/Icons/ArrowIcon";
 import JobShareTabs from "@/components/JobShareTabs";
 import styles from "@/components/JobsIdClientComponent/JobsIdClientComponent.module.scss";
 import Tab from "@/components/Tab";
+import { Job } from "@/types";
 import Link from "next/link";
 import { Col, Container, Row, Stack } from "react-bootstrap";
 
-const JobsIdClientComponent = ({ job }) => {
+const JobsIdClientComponent = ({ job }: { job: Job }) => {
   const { title, description, responsibilities, qualifications, type } = job;
   return (
     <>
@@ -55,7 +56,7 @@ const JobsIdClientComponent = ({ job }) => {
                 <div className={styles.textSubtitle}>
                   Responsibilities include but are not limited to:
                 </div>
-                {responsibilities.map((i: string) => (
+                {responsibilities.map((i) => (
                   <div className={styles.textBody}>
                     <span style={{ fontSize: "24px" }}>&bull;</span> {i}
                   </div>
@@ -66,7 +67,7 @@ const JobsIdClientComponent = ({ job }) => {
                   <div className={styles.textSubtitle}>Qualifications:</div>
                 </Col>
                 <Col xs={12}>
-                  {qualifications.map((i: string) => (
+                  {qualifications.map((i) => (
                     <div className={styles.textBody}>
                       <span style={{ fontSize: "24px" }}>&bull;</span> {i}
                     </div>

@@ -3,11 +3,11 @@
 import styles from "@/components/JobTypeFilter/JobTypeFilter.module.scss";
 import Tab from "@/components/Tab/index";
 import { jobTypes } from "@/constants";
-import { jobType } from "@/types";
+import { JobType } from "@/types";
 import { Dispatch, SetStateAction } from "react";
 
 type JobTypeFilterProps = {
-  activeType?: jobType;
+  activeType?: JobType;
   onClick: Dispatch<SetStateAction<string>>;
 };
 
