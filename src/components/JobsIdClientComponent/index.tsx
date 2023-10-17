@@ -57,8 +57,8 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
                 <div className={styles.textSubtitle}>
                   Responsibilities include but are not limited to:
                 </div>
-                {responsibilities.map((i) => (
-                  <div key={i} className={styles.textBody}>
+                {responsibilities.map((i, index) => (
+                  <div key={i + index} className={styles.textBody}>
                     <span style={{ fontSize: "24px" }}>&bull;</span> {i}
                   </div>
                 ))}
@@ -68,8 +68,8 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
                   <div className={styles.textSubtitle}>Qualifications:</div>
                 </Col>
                 <Col xs={12}>
-                  {qualifications.map((i) => (
-                    <div key={i} className={styles.textBody}>
+                  {qualifications.map((i, index) => (
+                    <div key={i + index} className={styles.textBody}>
                       <span style={{ fontSize: "24px" }}>&bull;</span> {i}
                     </div>
                   ))}
