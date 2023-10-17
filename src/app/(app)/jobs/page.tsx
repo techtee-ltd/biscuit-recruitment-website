@@ -1,10 +1,11 @@
 import JobSearchBar from "@/components/JobSearchBar";
 import JobTypeFilter from "@/components/JobTypeFilter";
-import styles from "@/app/jobs/jobs.module.scss";
+import styles from "@/app/(app)/jobs/jobs.module.scss";
 import JobCard from "@/components/JobCard";
 import JobCardList from "@/components/JobCardList";
+import { getJobPosts } from "../../../../sanity/sanity.query";
 
-const JobsPage = () => {
+const JobsPage = async () => {
   return (
     <div className={styles.jobsPage}>
       <div className={styles.jobSearchBar}>

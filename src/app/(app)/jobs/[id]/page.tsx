@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/app/jobs/[id]/jobsId.module.scss";
+import styles from "@/app/(app)/jobs/[id]/jobsId.module.scss";
 import ApplyModal from "@/components/ApplyModal";
 import ConfirmationModal from "@/components/ConfirmationModal";
 import ArrowIcon from "@/components/Icons/ArrowIcon";

@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/app/page.module.scss";
+import styles from "@/app/(app)/page.module.scss";
 import StickyFooter from "@/components/StickyFooter";
 import Image from "next/image";
 import { Col, Container } from "react-bootstrap";
