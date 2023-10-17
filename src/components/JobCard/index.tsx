@@ -5,7 +5,9 @@ import Tab from "@/components/Tab";
 import Link from "next/link";
 import { Stack } from "react-bootstrap";
 
-const JobCard = ({ jobPost }) => {
+import type { Job } from "@/types";
+
+const JobCard = ({ jobPost }: { jobPost: Job }) => {
   const { _id, title, description, type } = jobPost;
   return (
     <div className={styles.jobCard}>

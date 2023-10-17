@@ -10,8 +10,8 @@ const JobShareTabs = () => {
   return (
     <Row className="gap-2 g-0">
       {socialMedia.map((i) => (
-        <Col xs={"auto"}>
-          <Tab key={i}>{i}</Tab>
+        <Col key={i} xs={"auto"}>
+          <Tab>{i}</Tab>
         </Col>
       ))}
     </Row>

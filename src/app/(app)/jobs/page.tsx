@@ -36,7 +36,7 @@ const JobsPage = () => {
 
   useEffect(() => {
     debouncedFetchData();
-  }, [activeType, searchValue]);
+  }, [activeType, searchValue, debouncedFetchData]);
 
   return (
     <Form>

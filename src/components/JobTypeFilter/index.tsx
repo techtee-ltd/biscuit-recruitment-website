@@ -3,8 +3,9 @@
 import styles from "@/components/JobTypeFilter/JobTypeFilter.module.scss";
 import Tab from "@/components/Tab/index";
 import { jobTypes } from "@/constants";
-import { JobType } from "@/types";
 import { Dispatch, SetStateAction } from "react";
+
+import type { JobType } from "@/types";
 
 type JobTypeFilterProps = {
   activeType?: JobType;
