@@ -23,7 +23,7 @@ const JobCard = ({ jobPost }: { jobPost: Job }) => {
         </div>
         <div className={styles.title}>{title}</div>
 
-        <div>{description}</div>
+        <div className={styles.description}>{description}</div>
       </Stack>
       <Link href={`/jobs/${_id}`}>
         <Tab variant="full">See More</Tab>
