@@ -1,0 +1,32 @@
+.formControl {
+    border: none;
+    border-radius: 0,;
+    border-bottom: 1px solid var(--primary-black);
+    font-size: var(--text-xs)
+}
+
+.formControl::placeholder {
+    font-weight: 500;
+    font-size: var(--text-xs)
+}
+
+.formControl:focus {
+    color: var(--primary-black);
+    border-bottom: 1px solid var(--primary-black);
+    outline: none;
+    box-shadow:none;
+}
+
+.uppercase::placeholder {
+    text-transform: uppercase;
+}
+
+.borderAll {
+    border: 1px solid var(--primary-black);
+    border-radius: 16px;
+}
+
+.borderAll:focus {
+    border: 1px solid var(--primary-black);
+    border-radius: 16px;
+}

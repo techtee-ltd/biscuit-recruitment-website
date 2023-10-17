@@ -2,11 +2,12 @@
 
 import { Form } from "react-bootstrap";
 import styles from "@/components/JobSearchBar/JobSearchBar.module.scss";
+import FormControl from "../FormControl";
 
 const JobSearchBar = () => (
   <Form>
-    <Form.Control
-      className={styles.searchBar}
+    <FormControl
+      variant="uppercase"
       type="text"
       id="jobSearch"
       placeholder="Search"
