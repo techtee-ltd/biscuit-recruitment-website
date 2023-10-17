@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "@/app/(app)/jobs/jobs.module.scss";
-import { getAllJobs } from "@/sanity/sanity.query";
+import { getJobs } from "@/sanity/sanity.query";
 import JobCardList from "@/src/components/JobCardList";
 import JobSearchBar from "@/src/components/JobSearchBar";
 import JobTypeFilter from "@/src/components/JobTypeFilter";
@@ -25,11 +25,10 @@ const JobsPage = () => {
   const [searchValue, setSearchValue] = useState("");
   const [activeType, setActiveType] = useState(jobTypes.all);
   const [jobPosts, setJobPosts] = useState([]);
- 
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await getAllJobs({
+      const response = await getJobs({
         type: activeType,
         searchValue: searchValue,
       });

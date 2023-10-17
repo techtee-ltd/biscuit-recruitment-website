@@ -2,7 +2,7 @@ import { jobTypes } from "@/src/constants";
 import { groq } from "next-sanity";
 import client from "./sanity.client";
 
-export const getAllJobs = ({
+export const getJobs = ({
   type,
   searchValue,
 }: {
