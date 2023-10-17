@@ -6,6 +6,13 @@ import Link from "next/link";
 import { Stack } from "react-bootstrap";
 
 import type { Job } from "@/types";
+import { jobTypes } from "@/constants";
+
+const color = {
+  [jobTypes.contract]: "#F2D8D8",
+  [jobTypes.temporary]: "#5C8984",
+  [jobTypes.permanent]: "#545B77",
+};
 
 const JobCard = ({ jobPost }: { jobPost: Job }) => {
   const { _id, title, description, type } = jobPost;
@@ -16,7 +23,7 @@ const JobCard = ({ jobPost }: { jobPost: Job }) => {
           <div
             className={styles.circle}
             style={{
-              backgroundColor: "red",
+              backgroundColor: color[type],
             }}
           />
           {type}
