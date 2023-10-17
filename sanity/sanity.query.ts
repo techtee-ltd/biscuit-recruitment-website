@@ -10,16 +10,11 @@ export const getAllJobs = ({
   searchValue?: string;
 }) => {
   const search = "*" + searchValue + "*";
-  const query =
-    !type && !searchValue
-      ? groq`*[_type == 'job']{_id, title, description, type}`
-      : type === jobTypes.all
-      ? groq`*[_type == 'job' && _score > 0] | score(title match $search) {_id, title, description, type}`
-      : groq`*[_type == 'job' && type == $type && _score > 0]| score(title match $search) {_id, title, description, type}`;
+  const jobType = type === jobTypes.all ? "*" : type;
 
   return client.fetch(
-    query,
-    { type, search },
+    groq`*[_type == 'job' && type match $type && _score > 0]| score(title match $search) {_id, title, description, type}`,
+    { type: jobType, search },
     {
       next: {
         revalidate: 3600,
@@ -27,17 +22,6 @@ export const getAllJobs = ({
     }
   );
 };
-
-export const getJobsByType = (type: string) =>
-  client.fetch(
-    groq`*[_type == 'job' && type == $type]{_id, title, description, type}`,
-    { type },
-    {
-      next: {
-        revalidate: 3600,
-      },
-    }
-  );
 
 export const getJob = (id: string) =>
   client.fetch(
