@@ -25,18 +25,19 @@ const JobsPage = () => {
   const [searchValue, setSearchValue] = useState("");
   const [activeType, setActiveType] = useState(jobTypes.all);
   const [jobPosts, setJobPosts] = useState([]);
-  const fetchData = async () => {
-    const response = await getAllJobs({
-      type: activeType,
-      searchValue: searchValue,
-    });
-    setJobPosts(response);
-  };
-  const debouncedFetchData = debounce(fetchData, 300);
+ 
 
   useEffect(() => {
+    const fetchData = async () => {
+      const response = await getAllJobs({
+        type: activeType,
+        searchValue: searchValue,
+      });
+      setJobPosts(response);
+    };
+    const debouncedFetchData = debounce(fetchData, 500);
     debouncedFetchData();
-  }, [activeType, searchValue, debouncedFetchData]);
+  }, [activeType, searchValue]);
 
   return (
     <Form>
