@@ -1,12 +1,13 @@
 "use client";
 
-import styles from "@/components/JobCard/JobCard.module.scss";
-import Tab from "@/components/Tab";
+import styles from "@/src/components/JobCard/JobCard.module.scss";
+import Tab from "@/src/components/Tab";
+import { jobTypes } from "@/src/constants";
 import Link from "next/link";
 import { Stack } from "react-bootstrap";
 
-import type { Job } from "@/types";
-import { jobTypes } from "@/constants";
+import type { Job } from "@/src/types";
+
 
 const color = {
   [jobTypes.contract]: "#F2D8D8",

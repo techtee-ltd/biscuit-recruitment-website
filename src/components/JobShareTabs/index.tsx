@@ -1,5 +1,5 @@
-import styles from "@/components/JobShareTabs/JobShareTabs.module.scss";
-import Tab from "@/components/Tab";
+import styles from "@/src/components/JobShareTabs/JobShareTabs.module.scss";
+import Tab from "@/src/components/Tab";
 import { Col, Row } from "react-bootstrap";
 
 // TODO: implement the share function per social media

@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
-import styles from "@/components/FooterInfo/FooterInfo.module.scss";
-import ButtonXS from "@/components/ButtonXS";
+import styles from "@/src/components/FooterInfo/FooterInfo.module.scss";
+import ButtonXS from "@/src/components/ButtonXS";
 
 const office = [
   {

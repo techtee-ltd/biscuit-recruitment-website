@@ -1,5 +1,5 @@
 import { Modal } from "react-bootstrap";
-import styles from "@/components/ConfirmationModal/ConfirmationModal.module.scss";
+import styles from "@/src/components/ConfirmationModal/ConfirmationModal.module.scss";
 
 const ConfirmationModal = () => {
   return (

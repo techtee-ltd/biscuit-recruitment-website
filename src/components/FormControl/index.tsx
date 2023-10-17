@@ -1,4 +1,4 @@
-import styles from "@/components/FormControl/FormControl.module.scss";
+import styles from "@/src/components/FormControl/FormControl.module.scss";
 import { VariantProps, cva } from "class-variance-authority";
 import { Form } from "react-bootstrap";
 

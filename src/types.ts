@@ -1,4 +1,4 @@
-import { jobTypes } from "@/constants";
+import { jobTypes } from "@/src/constants";
 
 export type JobType = (typeof jobTypes)[keyof typeof jobTypes];
 

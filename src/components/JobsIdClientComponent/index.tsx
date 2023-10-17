@@ -1,13 +1,13 @@
 "use client";
 
-import ArrowIcon from "@/components/Icons/ArrowIcon";
-import JobShareTabs from "@/components/JobShareTabs";
-import styles from "@/components/JobsIdClientComponent/JobsIdClientComponent.module.scss";
-import Tab from "@/components/Tab";
+import ArrowIcon from "@/src/components/Icons/ArrowIcon";
+import JobShareTabs from "@/src/components/JobShareTabs";
+import styles from "@/src/components/JobsIdClientComponent/JobsIdClientComponent.module.scss";
+import Tab from "@/src/components/Tab";
 import Link from "next/link";
 import { Col, Container, Row, Stack } from "react-bootstrap";
 
-import type { Job } from "@/types";
+import type { Job } from "@/src/types";
 
 const JobsIdClientComponent = ({ job }: { job: Job }) => {
   const { title, description, responsibilities, qualifications, type } = job;

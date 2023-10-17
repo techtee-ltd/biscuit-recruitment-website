@@ -1,6 +1,6 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import StickyFooter from "@/components/StickyFooter";
+import Footer from "@/src/components/Footer";
+import Header from "@/src/components/Header";
+import StickyFooter from "@/src/components/StickyFooter";
 import type { Metadata } from "next";
 import "./globals.scss";
 

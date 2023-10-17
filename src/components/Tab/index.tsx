@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/components/Tab/Tab.module.scss";
+import styles from "@/src/components/Tab/Tab.module.scss";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Button } from "react-bootstrap";
 

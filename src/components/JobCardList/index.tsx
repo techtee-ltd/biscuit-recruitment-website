@@ -1,9 +1,9 @@
 "use client";
 
-import JobCard from "@/components/JobCard";
+import JobCard from "@/src/components/JobCard";
 import { Col, Row } from "react-bootstrap";
 
-import type { Job } from "@/types";
+import type { Job } from "@/src/types";
 
 const JobCardList = ({ jobPosts }: { jobPosts: Job[] }) => (
   <Row className="row-gap-4">

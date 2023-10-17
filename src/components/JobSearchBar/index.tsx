@@ -1,6 +1,6 @@
 "use client";
 
-import FormControl from "@/components/FormControl";
+import FormControl from "@/src/components/FormControl";
 import { Dispatch, SetStateAction } from "react";
 
 const JobSearchBar = ({

@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/components/HeaderItems/HeaderItems.module.scss";
+import styles from "@/src/components/HeaderItems/HeaderItems.module.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";

@@ -1,8 +1,8 @@
 "use client";
 
-import styles from "@/components/Footer/Footer.module.scss";
-import FooterInfo from "@/components/FooterInfo";
-import FooterLinks from "@/components/FooterLinks";
+import styles from "@/src/components/Footer/Footer.module.scss";
+import FooterInfo from "@/src/components/FooterInfo";
+import FooterLinks from "@/src/components/FooterLinks";
 import { Col, Container, Row } from "react-bootstrap";
 
 const Footer = () => {

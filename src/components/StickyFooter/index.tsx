@@ -1,9 +1,9 @@
 "use client";
 
-import ButtonMD from "@/components/ButtonMD";
-import CTAArrowIcon from "@/components/Icons/CTAArrowIcon";
-import styles from "@/components/StickyFooter/StickyFooter.module.scss";
-import { biscuitLinks } from "@/constants";
+import ButtonMD from "@/src/components/ButtonMD";
+import CTAArrowIcon from "@/src/components/Icons/CTAArrowIcon";
+import styles from "@/src/components/StickyFooter/StickyFooter.module.scss";
+import { biscuitLinks } from "@/src/constants";
 import { Navbar, Stack } from "react-bootstrap";
 
 const StickyFooter = () => {

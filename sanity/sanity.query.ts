@@ -1,4 +1,4 @@
-import { jobTypes } from "@/constants";
+import { jobTypes } from "@/src/constants";
 import { groq } from "next-sanity";
 import client from "./sanity.client";
 

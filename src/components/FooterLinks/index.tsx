@@ -1,5 +1,5 @@
-import ButtonXS from "@/components/ButtonXS";
-import { biscuitLinks } from "@/constants";
+import ButtonXS from "@/src/components/ButtonXS";
+import { biscuitLinks } from "@/src/constants";
 import { Stack } from "react-bootstrap";
 
 const FooterLinks = ({ showPrivacyPolicy = false }) => {

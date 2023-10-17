@@ -1,9 +1,9 @@
-import styles from "@/components/ApplyModal/ApplyModal.module.scss";
-import FormControl from "@/components/FormControl";
-import CloseIcon from "@/components/Icons/CloseIcon";
-import Tab from "@/components/Tab";
+import styles from "@/src/components/ApplyModal/ApplyModal.module.scss";
+import ButtonXS from "@/src/components/ButtonXS";
+import FormControl from "@/src/components/FormControl";
+import CloseIcon from "@/src/components/Icons/CloseIcon";
+import Tab from "@/src/components/Tab";
 import { Col, Container, Form, Modal, Row } from "react-bootstrap";
-import ButtonXS from "../ButtonXS";
 
 const ApplyModal = () => {
   return (

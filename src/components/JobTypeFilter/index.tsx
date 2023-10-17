@@ -1,11 +1,11 @@
 "use client";
 
-import styles from "@/components/JobTypeFilter/JobTypeFilter.module.scss";
-import Tab from "@/components/Tab/index";
-import { jobTypes } from "@/constants";
+import styles from "@/src/components/JobTypeFilter/JobTypeFilter.module.scss";
+import Tab from "@/src/components/Tab/index";
+import { jobTypes } from "@/src/constants";
 import { Dispatch, SetStateAction } from "react";
 
-import type { JobType } from "@/types";
+import type { JobType } from "@/src/types";
 
 type JobTypeFilterProps = {
   activeType?: JobType;

@@ -1,10 +1,10 @@
 "use client";
 
-import FooterLinks from "@/components/FooterLinks";
-import styles from "@/components/Header/Header.module.scss";
-import HeaderItems from "@/components/HeaderItems";
-import CloseIcon from "@/components/Icons/CloseIcon";
-import HamburgerMenu from "@/components/Icons/HamburgerMenu";
+import FooterLinks from "@/src/components/FooterLinks";
+import styles from "@/src/components/Header/Header.module.scss";
+import HeaderItems from "@/src/components/HeaderItems";
+import CloseIcon from "@/src/components/Icons/CloseIcon";
+import HamburgerMenu from "@/src/components/Icons/HamburgerMenu";
 import { useState } from "react";
 import { Container, Nav } from "react-bootstrap";
 

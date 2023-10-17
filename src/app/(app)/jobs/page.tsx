@@ -1,13 +1,13 @@
 "use client";
 
 import styles from "@/app/(app)/jobs/jobs.module.scss";
-import JobCardList from "@/components/JobCardList";
-import JobSearchBar from "@/components/JobSearchBar";
-import JobTypeFilter from "@/components/JobTypeFilter";
-import { jobTypes } from "@/constants";
+import { getAllJobs } from "@/sanity/sanity.query";
+import JobCardList from "@/src/components/JobCardList";
+import JobSearchBar from "@/src/components/JobSearchBar";
+import JobTypeFilter from "@/src/components/JobTypeFilter";
+import { jobTypes } from "@/src/constants";
 import { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
-import { getAllJobs } from "../../../../sanity/sanity.query";
 
 const debounce = (func: (...args: any[]) => any, wait: number) => {
   let timeoutId: NodeJS.Timeout | null = null;
