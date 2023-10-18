@@ -1,4 +1,4 @@
-.base, .base[type="button"]:disabled {
+.base {
     background-color: var(--primary-white);
     color: var(--primary-black);
     border: 1px solid var(--primary-black);
@@ -6,6 +6,16 @@
     padding: 8px 24px;
     font-size: var(--text-xs);
     width: fit-content;
+    text-transform: capitalize;;
+}
+
+.base[type="button"]:disabled {
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    border: 1px solid var(--primary-black);
+    border-radius: 40px;
+    padding: 8px 24px;
+    font-size: var(--text-xs);
 }
 
 .base:hover, .base[type="button"]:active {
