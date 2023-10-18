@@ -58,7 +58,7 @@ const ApplyModal = ({
         >
           <Row className="justify-content-end">
             <Col className="d-grid justify-content-end">
-              <ButtonXS onClick={onHide}>
+              <ButtonXS onClick={handleOnHide}>
                 <CloseIcon fill="#000" />
               </ButtonXS>
             </Col>
@@ -76,6 +76,7 @@ const ApplyModal = ({
                 type="text"
                 id="applyFirstName"
                 placeholder="Enter your first name"
+                state={errors?.firstName && "error"}
               />
 
               {errors?.firstName && (
@@ -92,6 +93,7 @@ const ApplyModal = ({
                 type="text"
                 id="applyLastName"
                 placeholder="Enter your last name"
+                state={errors?.lastName && "error"}
               />
               {errors?.lastName && (
                 <Col xs={12} className={styles.formErrors}>
@@ -111,6 +113,7 @@ const ApplyModal = ({
                 type="text"
                 id="applyEmail"
                 placeholder="Enter your email"
+                state={errors?.email && "error"}
               />
               {errors?.email && (
                 <Col xs={12} className={styles.formErrors}>
@@ -129,6 +132,7 @@ const ApplyModal = ({
                 type="text"
                 id="applyAboutYourself"
                 placeholder="Write some words about yourself"
+                state={errors?.about && "error"}
               />
               {errors?.about && (
                 <Col xs={12} className={styles.formErrors}>

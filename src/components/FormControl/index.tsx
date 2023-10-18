@@ -10,6 +10,9 @@ const formControl = cva(styles.formControl, {
       uppercase: styles.uppercase,
       borderAll: styles.borderAll,
     },
+    state: {
+      error: styles.error,
+    },
   },
 });
 
@@ -18,12 +21,13 @@ const FormControl = ({
   placeholder,
   type,
   variant,
+  state,
   ...props
 }: FormControlProps) => {
   return (
     <Form.Control
       {...props}
-      className={formControl({ variant })}
+      className={formControl({ variant, state })}
       type={type}
       id={id}
       placeholder={placeholder}

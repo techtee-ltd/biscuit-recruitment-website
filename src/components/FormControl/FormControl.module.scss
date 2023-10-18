@@ -30,3 +30,8 @@
     border: 1px solid var(--primary-black);
     border-radius: 16px;
 }
+
+.error, .error::placeholder {
+    color: var(--secondary-red);
+    border-color: var(--secondary-red);
+}
