@@ -111,7 +111,7 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
 
           <Col className={styles.shareMobile}>
             <div className={styles.textSubtitle}>Share</div>
-            <JobShareTabs />
+            <JobShareTabs job={job} />
           </Col>
         </Row>
       </Container>

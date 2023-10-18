@@ -6,9 +6,9 @@ import { Col, Row } from "react-bootstrap";
 const ROOT_URL = process.env.NEXT_PUBLIC_ROOT_URL;
 
 const JobShareTabs = ({ job }: { job: Job }) => {
+  const pathname = usePathname();
   if (!job) return null;
   const { title } = job;
-  const pathname = usePathname();
   const shareUrl = `${ROOT_URL}${pathname}`;
   const socialMediaUrl: { [key: string]: any } = {
     Facebook: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`,
