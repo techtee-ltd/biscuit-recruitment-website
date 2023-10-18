@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/app/(app)/jobs/jobs.module.scss";
+import styles from "@/src/app/(app)/jobs/jobs.module.scss";
 import { getJobs } from "@/sanity/sanity.query";
 import JobCardList from "@/src/components/JobCardList";
 import JobSearchBar from "@/src/components/JobSearchBar";

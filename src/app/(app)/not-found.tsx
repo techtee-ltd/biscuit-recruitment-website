@@ -1,4 +1,4 @@
-import styles from "@/app/(app)/not-found.module.scss";
+import styles from "@/src/app/(app)/not-found.module.scss";
 
 const NotFound = () => (
   <div className={styles.pageContainer}>
