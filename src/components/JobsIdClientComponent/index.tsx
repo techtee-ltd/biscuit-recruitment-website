@@ -72,7 +72,7 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
 
               <Col xs={12} className={styles.shareTablet}>
                 <div className={styles.textSubtitle}>Share</div>
-                <JobShareTabs />
+                <JobShareTabs job={job} />
               </Col>
             </Row>
           </Col>
