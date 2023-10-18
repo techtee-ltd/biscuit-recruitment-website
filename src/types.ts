@@ -9,4 +9,5 @@ export type Job = {
   type: string;
   responsibilities: string[];
   qualifications: string[];
+  [key: string]: any;
 };

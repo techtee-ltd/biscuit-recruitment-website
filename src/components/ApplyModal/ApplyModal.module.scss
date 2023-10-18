@@ -1,5 +1,5 @@
-.modal  {
-    max-width:1000px;
+.modal {
+    max-width: 1000px;
 }
 
 .modalContainer {
@@ -7,7 +7,7 @@
 }
 
 .closeIcon {
-    cursor: pointer
+    cursor: pointer;
 }
 
 .title {
@@ -16,17 +16,16 @@
     line-height: 1.3;
 }
 
-
 // TODO: extract input check
 
-.formCheckInput[type=checkbox] {
+.formCheckInput[type="checkbox"] {
     border-radius: 0;
     box-shadow: none;
     border-color: var(--primary-black);
     cursor: pointer;
 }
 
-.formCheckInput:checked[type=checkbox] {
+.formCheckInput:checked[type="checkbox"] {
     --bs-form-check-bg-image: url(/check-image.svg);
 }
 
@@ -35,9 +34,28 @@
     border-color: var(--primary-black);
 }
 
-@media only screen and (min-width: 768px) {
+.fileInputContainer {
+    position: relative;
+    cursor: pointer;
+}
 
+.fileInput {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.formErrors {
+    color: var(--secondary-red);
+    padding: 4px 12px;
+}
+
+@media only screen and (min-width: 768px) {
     .modal {
-        width: 80%
+        width: 80%;
     }
 }

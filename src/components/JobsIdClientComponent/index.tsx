@@ -1,20 +1,51 @@
 "use client";
 
+import ApplyModal from "@/src/components/ApplyModal";
+import ButtonMD from "@/src/components/ButtonMD";
+import ConfirmationModal from "@/src/components/ConfirmationModal";
 import ArrowIcon from "@/src/components/Icons/ArrowIcon";
+import CTAArrowIcon from "@/src/components/Icons/CTAArrowIcon";
 import JobShareTabs from "@/src/components/JobShareTabs";
 import styles from "@/src/components/JobsIdClientComponent/JobsIdClientComponent.module.scss";
+import StickyFooter from "@/src/components/StickyFooter";
 import Tab from "@/src/components/Tab";
-import Link from "next/link";
-import { Col, Container, Row, Stack } from "react-bootstrap";
-
 import type { Job } from "@/src/types";
+import Link from "next/link";
+import { useState } from "react";
+import { Col, Container, Row, Stack } from "react-bootstrap";
 
 const JobsIdClientComponent = ({ job }: { job: Job }) => {
   const { title, description, responsibilities, qualifications, type } = job;
+
+  const [showApplyModal, setShowApplyModal] = useState(false);
+
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+
+  const toggleApplyModal = () => setShowApplyModal((prev) => !prev);
+
+  const toggleConfirmationModal = () =>
+    setShowConfirmationModal((prev) => !prev);
+
+  const Button = () => (
+    <ButtonMD as="a" onClick={() => toggleApplyModal()}>
+      <Stack gap={3} direction="horizontal">
+        <CTAArrowIcon />
+        Apply for the job
+      </Stack>
+    </ButtonMD>
+  );
   return (
     <>
-      {/* <ConfirmationModal /> */}
-      {/* <ApplyModal /> */}
+      <ConfirmationModal
+        show={showConfirmationModal}
+        onHide={toggleConfirmationModal}
+      />
+      <ApplyModal
+        show={showApplyModal}
+        onHide={toggleApplyModal}
+        onSuccess={toggleConfirmationModal}
+        job={job}
+      />
       <Container
         fluid
         className={`d-grid row-gap-5 row-gap-md-2 ${styles.jobsPage}`}
@@ -84,6 +115,7 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
           </Col>
         </Row>
       </Container>
+      <StickyFooter Button={Button} />
     </>
   );
 };

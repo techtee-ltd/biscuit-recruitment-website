@@ -27,6 +27,8 @@ const FormControl = ({
       type={type}
       id={id}
       placeholder={placeholder}
+      {...(props.register &&
+        props.register(props.registerName, props.registerParams))}
     />
   );
 };
