@@ -1,6 +1,6 @@
 import styles from "@/src/app/(app)/our-story/our-story.module.scss";
-import { Col, Row } from "@/src/components/ReactBootstrapClientComponents";
 import Image from "next/image";
+import { Col, Row } from "react-bootstrap";
 
 const OurStoryPage = () => {
   const recruitPositions = [
