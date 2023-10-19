@@ -1,0 +1,47 @@
+.container {
+    padding: 16px;
+    padding-top: 56px
+}
+
+.container > * {
+    font-size: var(--text-xs)
+}
+
+.circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 1000px;
+    background-color: var(--primary-green);
+    padding: 0
+}
+
+.imageContainer {
+    position: relative;
+    min-width: 343px;
+    min-height: 343px;
+    max-width: 437px;
+    max-height: 437px;
+    width: 100%;
+    height: 100%;
+    background-position: top;
+}
+
+.positionsContainer {
+    margin-top: 56px;
+}
+
+@media (min-width: 1200px) {
+
+    .container {
+        padding: 40px;
+        padding-top: 88px
+    }
+
+    .h1 {
+        max-width: 75%
+    }
+
+    .positionsContainer {
+        margin-top: 120px;
+    }
+}
