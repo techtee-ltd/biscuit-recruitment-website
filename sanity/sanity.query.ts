@@ -45,3 +45,24 @@ export const getPrivacyPolicy = () =>
     }
   );
 
+export const getJournals = () =>
+  client.fetch(
+    groq`*[_type == "journal"]| order(_createdAt desc)[0...3]{_id, title, coverImage, content}`,
+    {},
+    {
+      next: {
+        revalidate: 3600,
+      },
+    }
+  );
+
+export const getJournal = (id: string) =>
+  client.fetch(
+    groq`*[_id == $id][0]{title, coverImage, content}`,
+    { id },
+    {
+      next: {
+        revalidate: 3600,
+      },
+    }
+  );
