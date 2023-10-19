@@ -35,12 +35,12 @@ const HowWeWork = () => {
     ],
   ];
 
-  const chunkedContent: (false | (string | string[])[][])[] = content
+  const chunkedContent = content
     .map((_, index, array) => index % 2 === 0 && array.slice(index, index + 2))
     .filter((chunk) => chunk);
 
   return (
-    <Row>
+    <Row className="row-gap-3">
       <Col xs={12}>
         <Row className="pt-3 pb-2 pt-lg-5 pb-lg-4">
           <Col className="d-flex align-items-center gap-2">

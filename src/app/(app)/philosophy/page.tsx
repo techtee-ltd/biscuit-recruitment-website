@@ -5,7 +5,7 @@ import { Col, Row } from "react-bootstrap";
 
 const PhilosophyPage = () => {
   return (
-    <div className={styles.container}>
+    <Row className={`row-gap-5 ${styles.container}`}>
       <Row>
         <Col xs={12}>
           <h1 className={styles.h1}>
@@ -58,7 +58,7 @@ const PhilosophyPage = () => {
       <Row>
         <HowWeWork />
       </Row>
-    </div>
+    </Row>
   );
 };
 

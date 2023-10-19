@@ -18,7 +18,7 @@ const TextImage = ({
     .filter((chunk) => chunk);
 
   return (
-    <Row>
+    <Row className="row-gap-3">
       <Col xs={12}>
         <Row className="pt-3 pb-2 pt-lg-5 pb-lg-4">
           <Col className="d-flex align-items-center gap-2">
