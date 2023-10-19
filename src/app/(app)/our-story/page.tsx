@@ -42,7 +42,7 @@ const OurStoryPage = () => {
               <p>
                 Frances has over 15 years of recruitment experience in the
                 industry working with clients that include small start-ups to
-                some of the world's major corporations and brands.
+                some of the world&apos;s major corporations and brands.
               </p>
             </Col>
             <Col xs={12} lg={6}>
@@ -65,8 +65,10 @@ const OurStoryPage = () => {
                 <Col xs={12} lg={6}>
                   {recruitPositions
                     .slice(0, recruitPositions.length / 2)
-                    .map((i) => (
-                      <li style={{ listStylePosition: "inside" }}>{i}</li>
+                    .map((i, index) => (
+                      <li key={index} style={{ listStylePosition: "inside" }}>
+                        {i}
+                      </li>
                     ))}
                 </Col>
                 <Col xs={12} lg={6}>
@@ -75,8 +77,10 @@ const OurStoryPage = () => {
                       recruitPositions.length / 2,
                       recruitPositions.length - 1
                     )
-                    .map((i) => (
-                      <li style={{ listStylePosition: "inside" }}>{i}</li>
+                    .map((i, index) => (
+                      <li key={index} style={{ listStylePosition: "inside" }}>
+                        {i}
+                      </li>
                     ))}
                 </Col>
               </Row>
