@@ -1,0 +1,28 @@
+.container {
+    padding: 16px;
+}
+
+.container > * {
+    font-family: var(--font-family);
+    font-size: var(--text-base)
+}
+
+.h1 {
+    font-size: 40px;
+}
+
+.h2 {
+    font-size: var(--text-sm)
+}
+
+.h3 {
+    font-weight: 500;
+    font-size: var(--text-base)
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 50%;
+        padding: 40px;
+    }
+}
