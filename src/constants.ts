@@ -6,3 +6,10 @@ export const biscuitLinks: { [key: string]: string } = {
   Email: "mailtto:info@biscuitrecruitment.com",
   "Privacy Policy": "#",
 };
+
+export const jobTypes = {
+  all: "all",
+  contract: "contract",
+  permanent: "permanent",
+  temporary: "temporary",
+};

@@ -9,17 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/vision": "^3.18.0",
+    "@sendgrid/mail": "^7.7.0",
     "@types/node": "20.5.7",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "bootstrap": "^5.3.1",
+    "class-variance-authority": "^0.7.0",
+    "email-validator": "^2.0.4",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "next": "13.4.19",
-    "next-sanity": "^5.4.6",
+    "next-sanity": "^5.5.8",
     "react": "18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.47.0",
+    "sanity": "^3.18.0",
     "sass": "^1.66.1",
     "typescript": "5.2.2"
   }

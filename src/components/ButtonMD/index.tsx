@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap";
-import styles from "@/components/ButtonMD/ButtonMD.module.scss";
+import styles from "@/src/components/ButtonMD/ButtonMD.module.scss";
 import Link from "next/link";
 
 const ButtonMD = (props: any) => {

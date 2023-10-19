@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap";
-import styles from "@/components/ButtonXS/ButtonXS.module.scss";
+import styles from "@/src/components/ButtonXS/ButtonXS.module.scss";
 import Link from "next/link";
 
 const ButtonXS = (props: any) => {
