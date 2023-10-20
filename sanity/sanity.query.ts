@@ -69,7 +69,7 @@ export const getJournalsForSidebar = () =>
 
 export const getJournal = (id: string) =>
   client.fetch(
-    groq`*[_id == $id][0]{title, coverImage, content}`,
+    groq`*[_id == $id][0]{title, subtitle, coverImage, content, _createdAt}`,
     { id },
     {
       next: {

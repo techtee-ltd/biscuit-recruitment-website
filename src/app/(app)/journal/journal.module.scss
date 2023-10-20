@@ -3,21 +3,11 @@
     padding-top: 56px;
 }
 
-.coverImage {
-    aspect-ratio: 322 / 216;
-    max-width: 322px;
-    max-height: 216px;
-    position: relative;
-    overflow: hidden;
-}
-
-
 .description {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    
 }
 
 .title {
@@ -30,13 +20,13 @@
 }
 
 @media (min-width: 768px) {
+
     .main {
         padding-left: 48px;
     }
 
-
     .sidebar {
-        border-right: 1px solid var(--primary-black)
+        border-right: 1px solid var(--primary-black);
     }
 }
 
@@ -46,9 +36,6 @@
         padding: 40px;
         padding-top: 88px;
     }
-
-   
-
 
     .h1 {
         max-width: 75%;

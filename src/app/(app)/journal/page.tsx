@@ -9,6 +9,7 @@ import { Journal } from "@/src/types";
 import { PortableText } from "@portabletext/react";
 import dayjs from "dayjs";
 import Image from "next/image";
+import Link from "next/link";
 import { Col, Row, Stack } from "react-bootstrap";
 
 const JournalPage = async () => {
@@ -30,18 +31,20 @@ const JournalPage = async () => {
             {main.map(({ _id, title, coverImage, content, subtitle }) => {
               return (
                 <Col key={_id} md={4}>
-                  <div className={styles.coverImage}>
+                  <Link href={`/journal/${_id}`}>
                     <Image
                       src={urlFor(coverImage).url()}
                       alt="image"
-                      fill={true}
-                      objectFit="cover"
+                      width="0"
+                      height="0"
+                      sizes="100vw"
+                      style={{ width: "100%", height: "auto" }}
                     />
-                  </div>
-                  <h2 className={styles.title}>{title}</h2>
-                  <div className={styles.description}>
-                    {subtitle ? subtitle : <PortableText value={content} />}
-                  </div>
+                    <h2 className={styles.title}>{title}</h2>
+                    <div className={styles.description}>
+                      {subtitle ? subtitle : <PortableText value={content} />}
+                    </div>
+                  </Link>
                 </Col>
               );
             })}
@@ -52,12 +55,14 @@ const JournalPage = async () => {
             {sidebar.map(({ _id, title, _createdAt }) => {
               const dateCreated = dayjs(_createdAt).format("DD.MM.YYYY");
               return (
-                <Stack key={_id} gap={1}>
-                  <h2 className={styles.title}>{title}</h2>
-                  <Tab state="readOnly" variant="small">
-                    {dateCreated}
-                  </Tab>
-                </Stack>
+                <Link key={_id} href={`/journal/${_id}`}>
+                  <Stack gap={1}>
+                    <h2 className={styles.title}>{title}</h2>
+                    <Tab state="readOnly" variant="small">
+                      {dateCreated}
+                    </Tab>
+                  </Stack>
+                </Link>
               );
             })}
           </Stack>
