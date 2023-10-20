@@ -1,0 +1,15 @@
+.imageContainer {
+    position: relative;
+    max-width: 437px;
+    width: 100%;
+    padding-bottom: 100%;
+    background-position: top;
+}
+
+.circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 1000px;
+    background-color: var(--primary-green);
+    padding: 0
+}

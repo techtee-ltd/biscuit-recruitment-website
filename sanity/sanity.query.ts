@@ -33,3 +33,47 @@ export const getJob = (id: string) =>
       },
     }
   );
+
+export const getPrivacyPolicy = () =>
+  client.fetch(
+    groq`*[_type == "privacyPolicy"][0]{content}`,
+    {},
+    {
+      next: {
+        revalidate: 3600,
+      },
+    }
+  );
+
+export const getJournalsForMain = () =>
+  client.fetch(
+    groq`*[_type == "journal"]| order(_createdAt desc)[0...3]{_id, title, subtitle, coverImage, content}`,
+    {},
+    {
+      next: {
+        revalidate: 3600,
+      },
+    }
+  );
+
+export const getJournalsForSidebar = () =>
+  client.fetch(
+    groq`*[_type == "journal"]| order(_createdAt desc)[3...11]{_id, title, subtitle, _createdAt}`,
+    {},
+    {
+      next: {
+        revalidate: 3600,
+      },
+    }
+  );
+
+export const getJournal = (id: string) =>
+  client.fetch(
+    groq`*[_id == $id][0]{title, subtitle, coverImage, content, _createdAt}`,
+    { id },
+    {
+      next: {
+        revalidate: 3600,
+      },
+    }
+  );
