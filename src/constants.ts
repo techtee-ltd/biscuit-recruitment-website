@@ -3,7 +3,7 @@ export const biscuitLinks: { [key: string]: string } = {
   Facebook: "https://www.facebook.com/biscuitrecruitment",
   Instagram: "https://www.instagram.com/biscuitrecruitment",
   LinkedIn: "https://www.linkedin.com/company/biscuit-recruitment",
-  Email: "mailtto:info@biscuitrecruitment.com",
+  Email: "mailto:info@biscuitrecruitment.com",
   "Privacy Policy": "/privacy-policy",
 };
 
