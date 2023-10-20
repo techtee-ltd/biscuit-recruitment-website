@@ -16,7 +16,6 @@ const JobShareTabs = ({ job }: { job: Job }) => {
     LinkedIn: `https://www.linkedin.com/shareArticle?${shareUrl}=a&title=${title}`,
     Telegram: `https://telegram.me/share/url?url=${shareUrl}&text=${title}`,
   };
-  console.log("pathname", pathname);
   return (
     <Row className="gap-2 g-0">
       {Object.keys(socialMediaUrl).map((i) => (
