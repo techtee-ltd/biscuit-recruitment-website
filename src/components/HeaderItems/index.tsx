@@ -94,6 +94,7 @@ const HeaderItems = ({
             ref={isSelected ? ref : null}
             href={`/${href}`}
             className={`${styles.headerLink} ${isSelectedStyle}`}
+            onClick={handleOnClose}
           >
             {text}
             {CloseIcon && isSelected && <CloseIcon onClick={handleOnClose} />}
