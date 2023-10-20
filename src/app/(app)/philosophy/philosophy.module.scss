@@ -1,0 +1,22 @@
+.container {
+    padding: 16px;
+    padding-top: 56px
+}
+
+.container > * {
+    font-size: var(--text-xs)
+}
+
+
+@media (min-width: 1200px) {
+
+    .container {
+        padding: 40px;
+        padding-top: 88px
+    }
+
+    .h1 {
+        max-width: 75%
+    }
+
+}
