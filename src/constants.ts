@@ -4,7 +4,7 @@ export const biscuitLinks: { [key: string]: string } = {
   Instagram: "https://www.instagram.com/biscuitrecruitment",
   LinkedIn: "https://www.linkedin.com/company/biscuit-recruitment",
   Email: "mailtto:info@biscuitrecruitment.com",
-  "Privacy Policy": "#",
+  "Privacy Policy": "/privacy-policy",
 };
 
 export const jobTypes = {

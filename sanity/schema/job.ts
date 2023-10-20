@@ -56,6 +56,4 @@ const job = {
   ],
 };
 
-const schemas = [job];
-
-export default schemas;
+export default job;

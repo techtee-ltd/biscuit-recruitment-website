@@ -67,8 +67,7 @@ const FooterInfo = () => {
           <Row>
             <Col xs={1} />
             <Col>
-              {/* TODO: Add the link to Privacy Policy */}
-              <ButtonXS href="#">Privacy Policy</ButtonXS>
+              <ButtonXS href="/privacy-policy">Privacy Policy</ButtonXS>
             </Col>
           </Row>
         </Col>

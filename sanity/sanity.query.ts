@@ -33,3 +33,15 @@ export const getJob = (id: string) =>
       },
     }
   );
+
+export const getPrivacyPolicy = () =>
+  client.fetch(
+    groq`*[_type == "privacyPolicy"][0]{content}`,
+    {},
+    {
+      next: {
+        revalidate: 3600,
+      },
+    }
+  );
+
