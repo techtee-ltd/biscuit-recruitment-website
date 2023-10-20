@@ -122,11 +122,11 @@ const ContactUsPage = () => {
                 type="text"
                 id="contactUsInquiry"
                 placeholder="Write a short description of your inquiry "
-                state={errors?.about && "error"}
+                state={errors?.inquiry && "error"}
               />
-              {errors?.about && (
+              {errors?.inquiry && (
                 <Col xs={12} className={styles.formErrors}>
-                  <>{errors?.about.message}</>
+                  <>{errors?.inquiry.message}</>
                 </Col>
               )}
             </Col>
