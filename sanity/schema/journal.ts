@@ -10,6 +10,11 @@ const journal = {
       validation: (Rule: any) => Rule.required().error("A title is required."),
     },
     {
+      name: "subtitle",
+      type: "string",
+      title: "Subtitle",
+    },
+    {
       title: "Cover Image",
       name: "coverImage",
       type: "image",
