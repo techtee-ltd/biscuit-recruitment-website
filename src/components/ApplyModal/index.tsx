@@ -37,7 +37,7 @@ const ApplyModal = ({
     Object.keys(job).forEach((key) => {
       formData.append(key, job[key]);
     });
-    await fetch("/api/sendEmail", {
+    await fetch("/api/sendEmailApplication", {
       method: "POST",
       body: formData,
     }).then(() => {

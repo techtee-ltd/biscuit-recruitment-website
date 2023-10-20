@@ -7,15 +7,33 @@ import Tab from "@/src/components/Tab";
 import emailValidator from "email-validator";
 import { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
-import { useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 const ContactUsPage = () => {
-  const { register, handleSubmit, formState, watch, reset } = useForm();
+  const { register, handleSubmit, formState, watch, reset, setError } =
+    useForm();
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
-  const toggleModal = () => setShowConfirmationModal((prev) => !prev);
+  const closeModal = () => setShowConfirmationModal(false);
+  const openModal = () => setShowConfirmationModal(true);
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    try {
+      await fetch("/api/sendEmailContactUs", {
+        method: "POST",
+        body: JSON.stringify(data),
+      })
+        .then(() => {
+          openModal();
+          reset();
+        })
+        .catch((e) => {
+          console.error(e);
+        });
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   const errors = formState?.errors;
 
@@ -23,7 +41,7 @@ const ContactUsPage = () => {
     <>
       <ConfirmationModal
         show={showConfirmationModal}
-        onHide={toggleModal}
+        onHide={closeModal}
         text="Your inquiry was successfully sent!"
       />
       <Form onSubmit={handleSubmit(onSubmit)}>
@@ -42,7 +60,7 @@ const ContactUsPage = () => {
                     register={register}
                     registerName={"firstName"}
                     type="text"
-                    id="applyFirstName"
+                    id="contactUsFirstName"
                     placeholder="Enter your first name"
                     state={errors?.firstName && "error"}
                   />
@@ -61,7 +79,7 @@ const ContactUsPage = () => {
                     register={register}
                     registerName={"lastName"}
                     type="text"
-                    id="applyLastName"
+                    id="contactUsLastName"
                     placeholder="Enter your last name"
                     state={errors?.lastName && "error"}
                   />
@@ -83,7 +101,7 @@ const ContactUsPage = () => {
                     emailValidator.validate(value) || "Incorrect email format",
                 }}
                 type="text"
-                id="applyEmail"
+                id="contactUsEmail"
                 placeholder="Enter your email"
                 state={errors?.email && "error"}
               />
@@ -96,13 +114,13 @@ const ContactUsPage = () => {
             <Col xs={12}>
               <FormControl
                 register={register}
-                registerName="about"
+                registerName="inquiry"
                 registerParams={{ required: "Inquiry is required" }}
                 variant="borderAll"
                 as="textarea"
                 rows={5}
                 type="text"
-                id="applyAboutYourself"
+                id="contactUsInquiry"
                 placeholder="Write a short description of your inquiry "
                 state={errors?.about && "error"}
               />
