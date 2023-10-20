@@ -7,3 +7,7 @@
 .button:hover {
     color: var(--primary-grey)
 }
+
+.button:hover svg path {
+    fill: var(--primary-grey);
+}

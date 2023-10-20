@@ -5,7 +5,11 @@
 }
 
 .button:hover {
-    color: var(--primary-grey)
+    color: var(--primary-grey);
+}
+
+.button:hover svg path {
+    fill: var(--primary-grey);
 }
 
 @media only screen and (min-width: 1200px) {
