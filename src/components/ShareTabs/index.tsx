@@ -1,14 +1,14 @@
+"use client";
+
 import Tab from "@/src/components/Tab";
-import { Job } from "@/src/types";
 import { usePathname } from "next/navigation";
 import { Col, Row } from "react-bootstrap";
 
 const ROOT_URL = process.env.NEXT_PUBLIC_ROOT_URL;
 
-const JobShareTabs = ({ job }: { job: Job }) => {
+const ShareTabs = ({ title }: { title: string }) => {
   const pathname = usePathname();
-  if (!job) return null;
-  const { title } = job;
+  if (!title) return null;
   const shareUrl = `${ROOT_URL}${pathname}`;
   const socialMediaUrl: { [key: string]: any } = {
     Facebook: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`,
@@ -30,4 +30,4 @@ const JobShareTabs = ({ job }: { job: Job }) => {
   );
 };
 
-export default JobShareTabs;
+export default ShareTabs;

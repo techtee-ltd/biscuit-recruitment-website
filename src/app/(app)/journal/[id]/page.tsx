@@ -9,6 +9,7 @@ import Tab from "@/src/components/Tab";
 import { Col, Container, Row, Stack } from "react-bootstrap";
 import Link from "next/link";
 import ArrowIcon from "@/src/components/Icons/ArrowIcon";
+import ShareTabs from "@/src/components/ShareTabs";
 
 const JournalIdPage = async ({ params }: { params: { id: string } }) => {
   const { title, subtitle, coverImage, content, _createdAt }: Journal =
@@ -63,6 +64,10 @@ const JournalIdPage = async ({ params }: { params: { id: string } }) => {
                 </Col>
                 <Col xs={12}>
                   <PortableText value={content} components={components} />
+                </Col>
+                <Col xs={12}>
+                  <div className={styles.shareIt}>Share it</div>
+                  <ShareTabs title={title} />
                 </Col>
               </Row>
             </Col>

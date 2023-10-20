@@ -5,7 +5,7 @@ import ButtonMD from "@/src/components/ButtonMD";
 import ConfirmationModal from "@/src/components/ConfirmationModal";
 import ArrowIcon from "@/src/components/Icons/ArrowIcon";
 import CTAArrowIcon from "@/src/components/Icons/CTAArrowIcon";
-import JobShareTabs from "@/src/components/JobShareTabs";
+import ShareTabs from "@/src/components/ShareTabs";
 import styles from "@/src/components/JobsIdClientComponent/JobsIdClientComponent.module.scss";
 import StickyFooter from "@/src/components/StickyFooter";
 import Tab from "@/src/components/Tab";
@@ -72,7 +72,7 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
 
               <Col xs={12} className={styles.shareTablet}>
                 <div className={styles.textSubtitle}>Share</div>
-                <JobShareTabs job={job} />
+                <ShareTabs title={job.title} />
               </Col>
             </Row>
           </Col>
@@ -111,7 +111,7 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
 
           <Col className={styles.shareMobile}>
             <div className={styles.textSubtitle}>Share</div>
-            <JobShareTabs job={job} />
+            <ShareTabs title={job.title} />
           </Col>
         </Row>
       </Container>
