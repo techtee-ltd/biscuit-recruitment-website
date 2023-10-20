@@ -8,27 +8,27 @@ import { useEffect, useRef, useState } from "react";
 const headerItems = [
   {
     text: "Biscuit",
-    href: "/",
+    href: "",
   },
   {
     text: "Jobs",
-    href: "/jobs",
+    href: "jobs",
   },
   {
     text: "Our Story",
-    href: "/our-story",
+    href: "our-story",
   },
   {
     text: "Philosophy",
-    href: "/philosophy",
+    href: "philosophy",
   },
   {
     text: "Journal",
-    href: "/journal",
+    href: "journal",
   },
   {
     text: "Contact Us",
-    href: "/contact-us",
+    href: "contact-us",
   },
 ];
 
@@ -72,21 +72,28 @@ const HeaderItems = ({
   useEffect(() => {
     if (!ref.current) return;
     handleStyleUpdates(ref.current);
-  }, []);
+  }, [pathname]);
 
   return (
     <>
       <div className={styles.headerMarker} style={markerStyle} />
       {headerItems.map((item) => {
         const { text, href } = item;
-        const isSelected = pathname === href;
+        const pattern = !href
+          ? /^\/$/
+          : new RegExp("^\\/" + href + "(\\/\\w+)?");
+        console.log("href ", href);
+        console.log("pattern ", pattern);
+        console.log("pathname ", pathname);
+        const isSelected = pattern.test(pathname);
+        console.log(href, isSelected);
         const isSelectedStyle = isSelected ? styles.headerLinkSelected : "";
         return (
           <Link
             key={text}
-            ref={pathname === href ? ref : null}
+            ref={isSelected ? ref : null}
             onClick={handleLinkClick}
-            href={href}
+            href={`/${href}`}
             className={`${styles.headerLink} ${isSelectedStyle}`}
           >
             {text}
