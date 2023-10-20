@@ -1,8 +1,10 @@
 .modal > div {
-    max-width: 400px;
+    max-width: 349px;
+    width: fit-content;
 }
 
 .text {
     font-size: var(--text-sm);
     font-weight: 500;
+    padding: 48px 24px;
 }

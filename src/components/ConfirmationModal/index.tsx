@@ -4,15 +4,15 @@ import styles from "@/src/components/ConfirmationModal/ConfirmationModal.module.
 const ConfirmationModal = ({
   show,
   onHide,
+  text,
 }: {
   show: boolean;
   onHide: () => void;
+  text: string;
 }) => {
   return (
     <Modal show={show} onHide={onHide} className={styles.modal}>
-      <div className={`d-grid p-5 text-center ${styles.text}`}>
-        Your application was successfully submitted!
-      </div>
+      <div className={`d-grid text-center ${styles.text}`}>{text}</div>
     </Modal>
   );
 };
