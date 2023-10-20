@@ -63,14 +63,18 @@ const HeaderItems = ({
     });
   };
 
-  const handleLinkClick = (e: any) => {
-    handleStyleUpdates(e.target);
-  };
-
   // To set the initial selected item
   const ref = useRef(null);
   useEffect(() => {
-    if (!ref.current) return;
+    if (!ref.current) {
+      setMarkerStyle({
+        top: "0px",
+        left: "0px",
+        width: "0px",
+        height: "0px",
+      });
+      return;
+    }
     handleStyleUpdates(ref.current);
   }, [pathname]);
 
@@ -82,17 +86,12 @@ const HeaderItems = ({
         const pattern = !href
           ? /^\/$/
           : new RegExp("^\\/" + href + "(\\/\\w+)?");
-        console.log("href ", href);
-        console.log("pattern ", pattern);
-        console.log("pathname ", pathname);
         const isSelected = pattern.test(pathname);
-        console.log(href, isSelected);
         const isSelectedStyle = isSelected ? styles.headerLinkSelected : "";
         return (
           <Link
             key={text}
             ref={isSelected ? ref : null}
-            onClick={handleLinkClick}
             href={`/${href}`}
             className={`${styles.headerLink} ${isSelectedStyle}`}
           >
