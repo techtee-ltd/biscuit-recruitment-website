@@ -55,14 +55,14 @@ const HowWeWork = () => {
         </Row>
       </Col>
       <Col md={6} lg={4}>
-        <div className={styles.imageContainer}>
-          <Image
-            src="/philosophy-page-3.jpg"
-            alt="/philosophy-page-3.jpg"
-            fill={true}
-            objectFit="contain"
-          />
-        </div>
+        <Image
+          src="/philosophy-page-3.jpg"
+          alt="/philosophy-page-3.jpg"
+          width="0"
+          height="0"
+          sizes="100vw"
+          style={{ width: "100%", height: "auto" }}
+        />
       </Col>
       <Col md={6} lg={8}>
         {chunkedContent.map((chunk: any, index) => (

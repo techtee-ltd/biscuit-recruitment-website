@@ -88,14 +88,14 @@ const OurStoryPage = () => {
           </Row>
         </Col>
         <Col md={6} lg={4}>
-          <div className={styles.imageContainer}>
-            <Image
-              src="/our-story-photo.jpg"
-              alt="our story page photo"
-              fill={true}
-              objectFit="contain"
-            />
-          </div>
+          <Image
+            src="/our-story-photo.jpg"
+            alt="our story page photo"
+            width="0"
+            height="0"
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+          />
         </Col>
       </Row>
     </div>

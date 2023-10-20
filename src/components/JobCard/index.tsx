@@ -2,18 +2,11 @@
 
 import styles from "@/src/components/JobCard/JobCard.module.scss";
 import Tab from "@/src/components/Tab";
-import { jobTypes } from "@/src/constants";
+import { jobTypesColor } from "@/src/constants";
 import Link from "next/link";
 import { Stack } from "react-bootstrap";
 
 import type { Job } from "@/src/types";
-
-
-const color = {
-  [jobTypes.contract]: "#F2D8D8",
-  [jobTypes.temporary]: "#5C8984",
-  [jobTypes.permanent]: "#545B77",
-};
 
 const JobCard = ({ jobPost }: { jobPost: Job }) => {
   const { _id, title, description, type } = jobPost;
@@ -24,7 +17,7 @@ const JobCard = ({ jobPost }: { jobPost: Job }) => {
           <div
             className={styles.circle}
             style={{
-              backgroundColor: color[type],
+              backgroundColor: jobTypesColor[type],
             }}
           />
           {type}

@@ -14,6 +14,8 @@ const Header = () => {
   const toggleMenu = () => {
     setDrawerOpen((prevState) => !prevState);
   };
+  
+  const handleCloseMenu = () => setDrawerOpen(false);
 
   return (
     <>
@@ -39,10 +41,16 @@ const Header = () => {
         >
           <div className={styles.headerDrawerWrapper}>
             <div>
-              <HeaderItems CloseIcon={CloseIcon} handleOnClose={toggleMenu} />
+              <HeaderItems
+                CloseIcon={CloseIcon}
+                handleOnClose={handleCloseMenu}
+              />
             </div>
             <Container fluid style={{ padding: "16px 24px" }}>
-              <FooterLinks showPrivacyPolicy={true} />
+              <FooterLinks
+                showPrivacyPolicy={true}
+                handleOnClose={handleCloseMenu}
+              />
             </Container>
           </div>
         </div>

@@ -2,7 +2,13 @@ import ButtonXS from "@/src/components/ButtonXS";
 import { biscuitLinks } from "@/src/constants";
 import { Stack } from "react-bootstrap";
 
-const FooterLinks = ({ showPrivacyPolicy = false }) => {
+const FooterLinks = ({
+  showPrivacyPolicy = false,
+  handleOnClose,
+}: {
+  showPrivacyPolicy?: boolean;
+  handleOnClose?: () => void;
+}) => {
   const links = { ...biscuitLinks };
   if (!showPrivacyPolicy) {
     links["Privacy Policy"] = "";
@@ -13,7 +19,7 @@ const FooterLinks = ({ showPrivacyPolicy = false }) => {
         const href = links[key];
         if (!href) return;
         return (
-          <ButtonXS key={key} href={href}>
+          <ButtonXS key={key} href={href} onClick={handleOnClose}>
             {key}
           </ButtonXS>
         );

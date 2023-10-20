@@ -8,27 +8,27 @@ import { useEffect, useRef, useState } from "react";
 const headerItems = [
   {
     text: "Biscuit",
-    href: "/",
+    href: "",
   },
   {
     text: "Jobs",
-    href: "/jobs",
+    href: "jobs",
   },
   {
     text: "Our Story",
-    href: "/our-story",
+    href: "our-story",
   },
   {
     text: "Philosophy",
-    href: "/philosophy",
+    href: "philosophy",
   },
   {
     text: "Journal",
-    href: "/journal",
+    href: "journal",
   },
   {
     text: "Contact Us",
-    href: "/contact-us",
+    href: "contact-us",
   },
 ];
 
@@ -63,31 +63,38 @@ const HeaderItems = ({
     });
   };
 
-  const handleLinkClick = (e: any) => {
-    handleStyleUpdates(e.target);
-  };
-
   // To set the initial selected item
   const ref = useRef(null);
   useEffect(() => {
-    if (!ref.current) return;
+    if (!ref.current) {
+      setMarkerStyle({
+        top: "0px",
+        left: "0px",
+        width: "0px",
+        height: "0px",
+      });
+      return;
+    }
     handleStyleUpdates(ref.current);
-  }, []);
+  }, [pathname]);
 
   return (
     <>
       <div className={styles.headerMarker} style={markerStyle} />
       {headerItems.map((item) => {
         const { text, href } = item;
-        const isSelected = pathname === href;
+        const pattern = !href
+          ? /^\/$/
+          : new RegExp("^\\/" + href + "(\\/\\w+)?");
+        const isSelected = pattern.test(pathname);
         const isSelectedStyle = isSelected ? styles.headerLinkSelected : "";
         return (
           <Link
             key={text}
-            ref={pathname === href ? ref : null}
-            onClick={handleLinkClick}
-            href={href}
+            ref={isSelected ? ref : null}
+            href={`/${href}`}
             className={`${styles.headerLink} ${isSelectedStyle}`}
+            onClick={handleOnClose}
           >
             {text}
             {CloseIcon && isSelected && <CloseIcon onClick={handleOnClose} />}
