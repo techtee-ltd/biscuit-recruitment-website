@@ -21,7 +21,10 @@ const ApplyModal = ({
 }) => {
   const { title } = job;
 
-  const { register, handleSubmit, formState, watch, reset } = useForm();
+  // const [serverError, setServerEer]
+
+  const { register, handleSubmit, formState, watch, reset, setError } =
+    useForm();
 
   const handleOnHide = () => {
     onHide();
@@ -29,21 +32,31 @@ const ApplyModal = ({
   };
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    let formData = new FormData();
-    Object.keys(data).forEach((key) => {
-      formData.append(key, data[key]);
-    });
-    formData.append("file", data.pdfFile[0]);
-    Object.keys(job).forEach((key) => {
-      formData.append(key, job[key]);
-    });
-    await fetch("/api/sendEmailApplication", {
-      method: "POST",
-      body: formData,
-    }).then(() => {
+    try {
+      let formData = new FormData();
+      Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+      });
+      formData.append("file", data.pdfFile[0]);
+      Object.keys(job).forEach((key) => {
+        formData.append(key, job[key]);
+      });
+      const response = await fetch("/api/sendEmailApplication", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.status === 500) {
+        throw new Error(response.statusText);
+      }
       onSuccess();
       handleOnHide();
-    });
+    } catch (e) {
+      setError("root.serverError", {
+        type: "500",
+        message: "Oops! We couldn't process your form. Please try again later.",
+      });
+    }
   };
 
   const errors = formState.errors;
@@ -209,6 +222,11 @@ const ApplyModal = ({
           <Tab type="submit" variant="full">
             Apply
           </Tab>
+          {errors?.root?.serverError && (
+            <Col xs={12} className={styles.formErrors}>
+              <>{errors?.root.serverError.message}</>
+            </Col>
+          )}
         </Container>
       </Form>
     </Modal>

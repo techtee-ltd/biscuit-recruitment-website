@@ -19,19 +19,20 @@ const ContactUsPage = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
-      await fetch("/api/sendEmailContactUs", {
+      const response = await fetch("/api/sendEmailContactUs", {
         method: "POST",
         body: JSON.stringify(data),
-      })
-        .then(() => {
-          openModal();
-          reset();
-        })
-        .catch((e) => {
-          console.error(e);
-        });
+      });
+      if (response.status === 500) {
+        throw new Error(response.statusText);
+      }
+      openModal();
+      reset();
     } catch (e) {
-      console.error(e);
+      setError("root.serverError", {
+        type: "500",
+        message: "Oops! We couldn't process your form. Please try again later.",
+      });
     }
   };
 
@@ -133,6 +134,14 @@ const ContactUsPage = () => {
           </Row>
           <Row className="d-flex justify-content-end">
             <Tab type="submit">Send</Tab>
+            {errors?.root?.serverError && (
+              <Col
+                xs={12}
+                className={`d-flex justify-content-end ${styles.formErrors}`}
+              >
+                <>{errors?.root.serverError.message}</>
+              </Col>
+            )}
           </Row>
         </Container>
       </Form>
