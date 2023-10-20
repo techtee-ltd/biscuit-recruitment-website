@@ -6,8 +6,8 @@ const FooterLinks = ({
   showPrivacyPolicy = false,
   handleOnClose,
 }: {
-  showPrivacyPolicy: boolean;
-  handleOnClose: () => void;
+  showPrivacyPolicy?: boolean;
+  handleOnClose?: () => void;
 }) => {
   const links = { ...biscuitLinks };
   if (!showPrivacyPolicy) {
