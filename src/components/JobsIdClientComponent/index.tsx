@@ -39,6 +39,7 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
       <ConfirmationModal
         show={showConfirmationModal}
         onHide={toggleConfirmationModal}
+        text="Your application was successfully submitted!"
       />
       <ApplyModal
         show={showApplyModal}

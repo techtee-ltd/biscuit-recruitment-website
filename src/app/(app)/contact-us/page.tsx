@@ -1,21 +1,31 @@
 "use client";
 
 import styles from "@/src/app/(app)/contact-us/contact-us.module.scss";
+import ConfirmationModal from "@/src/components/ConfirmationModal";
 import FormControl from "@/src/components/FormControl";
 import Tab from "@/src/components/Tab";
 import emailValidator from "email-validator";
+import { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
 const ContactUsPage = () => {
   const { register, handleSubmit, formState, watch, reset } = useForm();
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+
+  const toggleModal = () => setShowConfirmationModal((prev) => !prev);
 
   const onSubmit = (data) => console.log(data);
 
   const errors = formState?.errors;
 
   return (
-    <div>
+    <>
+      <ConfirmationModal
+        show={showConfirmationModal}
+        onHide={toggleModal}
+        text="Your inquiry was successfully sent!"
+      />
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Container fluid className={`d-grid row-gap-5 ${styles.container}`}>
           <Row className={styles.title}>
@@ -24,7 +34,6 @@ const ContactUsPage = () => {
               Let's start our conversation about your needs right now.
             </Col>
           </Row>
-
           <Row className="row-gap-4">
             <Col xs={12} lg={6}>
               <Row>
@@ -109,7 +118,7 @@ const ContactUsPage = () => {
           </Row>
         </Container>
       </Form>
-    </div>
+    </>
   );
 };
 
