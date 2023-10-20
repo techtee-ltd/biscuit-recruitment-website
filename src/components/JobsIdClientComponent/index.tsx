@@ -9,6 +9,7 @@ import JobShareTabs from "@/src/components/JobShareTabs";
 import styles from "@/src/components/JobsIdClientComponent/JobsIdClientComponent.module.scss";
 import StickyFooter from "@/src/components/StickyFooter";
 import Tab from "@/src/components/Tab";
+import { jobTypesColor } from "@/src/constants";
 import type { Job } from "@/src/types";
 import Link from "next/link";
 import { useState } from "react";
@@ -68,7 +69,19 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
 
               <Col xs={12}>
                 <div className={styles.textSubtitle}>Job type</div>
-                <Tab state="readOnly">{type}</Tab>
+                <Tab state="readOnly">
+                  <div className="d-flex">
+                    <div
+                      className={styles.circle}
+                      style={{
+                        position: "absolute",
+                        transform: "translateX(-10px)",
+                        backgroundColor: jobTypesColor[type],
+                      }}
+                    />
+                    {type}
+                  </div>
+                </Tab>
               </Col>
 
               <Col xs={12} className={styles.shareTablet}>

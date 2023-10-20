@@ -18,6 +18,14 @@
     display: none;
 }
 
+.circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 1000px;
+    background-color: var(--primary-green);
+    padding: 0
+}
+
 @media only screen and (min-width: 768px) {
     
     .jobsPage {

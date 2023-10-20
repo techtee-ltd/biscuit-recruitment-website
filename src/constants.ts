@@ -13,3 +13,9 @@ export const jobTypes = {
   permanent: "permanent",
   temporary: "temporary",
 };
+
+export const jobTypesColor = {
+  [jobTypes.contract]: "#F2D8D8",
+  [jobTypes.temporary]: "#5C8984",
+  [jobTypes.permanent]: "#545B77",
+};
