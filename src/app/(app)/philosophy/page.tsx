@@ -34,7 +34,7 @@ const PhilosophyPage = () => {
         <Col>
           <TextImage
             title="Our Clients"
-            color="#F2D8D8"
+            color="#5C8984"
             content={[
               "We meet with all of our clients and seek to understand their needs, from filling a specific vacant position to consulting on support staff infrastructure for new or expanding businesses.",
             ]}

@@ -45,9 +45,14 @@ const TextImage = ({
       </Col>
       <Col md={6} lg={4}>
         {imgSrc && (
-          <div className={styles.imageContainer}>
-            <Image src={imgSrc} alt={imgSrc} fill={true} objectFit="contain" />
-          </div>
+          <Image
+            src={imgSrc}
+            alt={imgSrc}
+            width="0"
+            height="0"
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+          />
         )}
       </Col>
     </Row>
