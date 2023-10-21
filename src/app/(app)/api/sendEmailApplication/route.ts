@@ -14,11 +14,16 @@ export const POST = async (req: NextRequest) => {
     const buffer = Buffer.from(await file.arrayBuffer()); // https://reacthustle.com/blog/how-to-create-react-multiple-file-upload-using-nextjs-and-typescript#step-5-implementing-the-upload-api
     const applicantFullName = `${firstName} ${lastName}`;
 
-    await sendgrid.send({
-      to: process.env.BISCUIT_SENDGRID_TO_EMAIL,
-      from: process.env.BISCUIT_SENDGRID_FROM_EMAIL || "",
-      subject: `Application for ${title} from ${applicantFullName}`,
-      html: `<div>
+    if (!process.env.BISCUIT_SENDGRID_FROM_EMAIL) {
+      throw new Error("Sendgrid FROM email is required");
+    }
+
+    await sendgrid
+      .send({
+        to: process.env.BISCUIT_SENDGRID_TO_EMAIL,
+        from: process.env.BISCUIT_SENDGRID_FROM_EMAIL,
+        subject: `Application for ${title} from ${applicantFullName}`,
+        html: `<div>
     <div>${title}</div>
     <div>Job ID: ${id}</div>
     <br />
@@ -28,17 +33,20 @@ export const POST = async (req: NextRequest) => {
     <div>Email: ${email}</div>
     <div>About: ${about}</div>
     </div>`,
-      attachments: [
-        {
-          content: buffer.toString("base64"),
-          filename: `${lastName}-${firstName}-${title}`,
-          type: "application/pdf",
-          disposition: "attachment",
-        },
-      ],
-    });
-    return Response.json({});
+        attachments: [
+          {
+            content: buffer.toString("base64"),
+            filename: `${lastName}-${firstName}-${title}`,
+            type: "application/pdf",
+            disposition: "attachment",
+          },
+        ],
+      })
+      .catch((e) => {
+        throw new Error(`${e}`);
+      });
+    return new Response(null, { status: 200 });
   } catch (error) {
-    console.error(error);
+    console.error("Something went wrong: ", error);
   }
 };
