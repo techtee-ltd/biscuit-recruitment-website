@@ -156,7 +156,7 @@ const ApplyModal = ({
                 )}
               </Col>
               <Col xs={12}>
-                <Row className="row-gap-4">
+                <Row className="row-gap-4 d-flex align-items-center">
                   <Col xs={12} lg={6}>
                     <div className={styles.fileInputContainer}>
                       <input
@@ -186,7 +186,7 @@ const ApplyModal = ({
                       )}
                     </div>
                   </Col>
-                  <Col xs={12} lg={6}>
+                  <Col xs={12} lg={6} className={styles.fileInputHelperText}>
                     <div>Allowed format: .pdf</div>
                     <div> Maximum file size: 5 mb</div>
                   </Col>
