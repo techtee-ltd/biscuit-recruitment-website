@@ -7,6 +7,11 @@
     font-size: var(--text-xs);
 }
 
+.backButton {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    font-weight: 500;
+}
 
 @media (min-width: 1200px) {
 

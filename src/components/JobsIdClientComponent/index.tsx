@@ -50,10 +50,10 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
       />
       <Container
         fluid
-        className={`d-grid row-gap-5 row-gap-md-2 ${styles.jobsPage}`}
+        className={`d-grid row-gap-5 row-gap-md-4 ${styles.jobsPage}`}
       >
         <Row>
-          <Link href="/jobs">
+          <Link href="/jobs" className={styles.backButton}>
             <Stack direction="horizontal" gap={1}>
               <ArrowIcon /> Back
             </Stack>
