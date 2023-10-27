@@ -12,6 +12,7 @@ const tab = cva(styles.base, {
       uppercase: styles.two,
       full: `${styles.two} ${styles.three}`,
       small: styles.small,
+      link: `${styles.two} ${styles.link}`,
     },
     state: {
       selected: styles.selected,

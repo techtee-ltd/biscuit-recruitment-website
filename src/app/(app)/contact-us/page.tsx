@@ -113,36 +113,42 @@ const ContactUsPage = () => {
               )}
             </Col>
             <Col xs={12}>
-              <FormControl
-                register={register}
-                registerName="inquiry"
-                registerParams={{ required: "Inquiry is required" }}
-                variant="borderAll"
-                as="textarea"
-                rows={5}
-                type="text"
-                id="contactUsInquiry"
-                placeholder="Write a short description of your inquiry "
-                state={errors?.inquiry && "error"}
-              />
+              <div className={styles.textAreaContainer}>
+                <FormControl
+                  register={register}
+                  registerName="inquiry"
+                  registerParams={{ required: "Inquiry is required" }}
+                  variant="borderAll"
+                  as="textarea"
+                  rows={5}
+                  type="text"
+                  id="contactUsInquiry"
+                  placeholder="Write a short description of your inquiry "
+                  state={errors?.inquiry && "error"}
+                />
+                <div className={styles.sendButton}>
+                  <Tab variant="link" type="submit">
+                    Send
+                  </Tab>
+                </div>
+              </div>
+
               {errors?.inquiry && (
                 <Col xs={12} className={styles.formErrors}>
                   <>{errors?.inquiry.message}</>
                 </Col>
               )}
+              {errors?.root?.serverError && (
+                <Col
+                  xs={12}
+                  className={`d-flex justify-content-end ${styles.formErrors}`}
+                >
+                  <>{errors?.root.serverError.message}</>
+                </Col>
+              )}
             </Col>
           </Row>
-          <Row className="d-flex justify-content-end">
-            <Tab type="submit">Send</Tab>
-            {errors?.root?.serverError && (
-              <Col
-                xs={12}
-                className={`d-flex justify-content-end ${styles.formErrors}`}
-              >
-                <>{errors?.root.serverError.message}</>
-              </Col>
-            )}
-          </Row>
+          <Row className="d-flex justify-content-end"></Row>
         </Container>
       </Form>
     </>
