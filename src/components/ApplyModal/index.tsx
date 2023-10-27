@@ -80,8 +80,8 @@ const ApplyModal = ({
             <Col>Apply for the role of {title}</Col>
           </Row>
 
-          <Row className="gap-4">
-            <Col xs={12}>
+          <Row className="row-gap-4">
+            <Col xs={12} lg={6}>
               <FormControl
                 register={register}
                 registerName={"firstName"}
@@ -98,7 +98,7 @@ const ApplyModal = ({
                 </Col>
               )}
             </Col>
-            <Col xs={12}>
+            <Col xs={12} lg={6}>
               <FormControl
                 register={register}
                 registerName={"lastName"}
