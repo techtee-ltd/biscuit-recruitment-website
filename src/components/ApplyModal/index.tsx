@@ -203,9 +203,14 @@ const ApplyModal = ({
                   })}
                 />
                 <Form.Check.Label>
-                  I confirm that I have read and accept the Terms and
-                  Conditions. By sending my CV, I agree I have read and
-                  understand the, Privacy Policy.
+                  <div>
+                    I confirm that I have read and accept the Terms and
+                    Conditions.
+                  </div>
+                  <div>
+                    By sending my CV, I agree I have read and understand the,
+                    Privacy Policy.
+                  </div>
                 </Form.Check.Label>
                 {errors?.checkInput && (
                   <Col
