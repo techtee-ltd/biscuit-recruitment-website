@@ -93,12 +93,12 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
 
           <Col xs={12} md={6}>
             <Row className="gap-4">
-              <Row className="gap-1">
+              <Row className="lh-sm">
                 <div className={styles.textSubtitle}>Job description:</div>
                 <div>{description}</div>
               </Row>
 
-              <Row className="gap-1">
+              <Row className="lh-sm">
                 <div className={styles.textSubtitle}>
                   Responsibilities include but are not limited to:
                 </div>
@@ -108,7 +108,7 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
                   </div>
                 ))}
               </Row>
-              <Row className="gap-1">
+              <Row className="lh-sm">
                 <Col xs={12}>
                   <div className={styles.textSubtitle}>Qualifications:</div>
                 </Col>
