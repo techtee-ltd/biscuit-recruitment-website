@@ -50,10 +50,10 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
       />
       <Container
         fluid
-        className={`d-grid row-gap-5 row-gap-md-2 ${styles.jobsPage}`}
+        className={`d-grid row-gap-5 row-gap-md-4 ${styles.jobsPage}`}
       >
         <Row>
-          <Link href="/jobs">
+          <Link href="/jobs" className={styles.backButton}>
             <Stack direction="horizontal" gap={1}>
               <ArrowIcon /> Back
             </Stack>
@@ -93,12 +93,12 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
 
           <Col xs={12} md={6}>
             <Row className="gap-4">
-              <Row className="gap-1">
+              <Row className="lh-sm">
                 <div className={styles.textSubtitle}>Job description:</div>
                 <div>{description}</div>
               </Row>
 
-              <Row className="gap-1">
+              <Row className="lh-sm">
                 <div className={styles.textSubtitle}>
                   Responsibilities include but are not limited to:
                 </div>
@@ -108,7 +108,7 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
                   </div>
                 ))}
               </Row>
-              <Row className="gap-1">
+              <Row className="lh-sm">
                 <Col xs={12}>
                   <div className={styles.textSubtitle}>Qualifications:</div>
                 </Col>

@@ -32,9 +32,9 @@ const JournalIdPage = async ({ params }: { params: { id: string } }) => {
   };
   return (
     <div className={styles.container}>
-      <Row className={`d-grid row-gap-2 `}>
+      <Row className={`d-grid row-gap-5 row-gap-md-4 `}>
         <Col>
-          <Link href="/journal">
+          <Link href="/journal" className={styles.backButton}>
             <Stack direction="horizontal" gap={1}>
               <ArrowIcon /> Back
             </Stack>

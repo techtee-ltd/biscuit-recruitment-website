@@ -26,6 +26,12 @@
     padding: 0
 }
 
+.backButton {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
 @media only screen and (min-width: 768px) {
     
     .jobsPage {
@@ -45,5 +51,6 @@
     
     .jobsPage {
         padding: 40px;
+        padding-bottom: 150px;
     }
 }

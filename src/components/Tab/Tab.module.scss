@@ -47,3 +47,13 @@
     font-size: 12px;
     padding: 4px 8px;
 }
+
+.link, .link:hover, .link[type="submit"]:active {
+    border: none;
+    background-color: transparent;
+    color: var(--primary-black);
+
+    @media (min-width: 1200px) {
+        font-size: 28px;
+    }
+}

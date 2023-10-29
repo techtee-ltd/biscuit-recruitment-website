@@ -1,6 +1,9 @@
 .modal > div {
     max-width: 349px;
     width: fit-content;
+    > div {
+        border-radius: 16px !important;
+    }
 }
 
 .text {

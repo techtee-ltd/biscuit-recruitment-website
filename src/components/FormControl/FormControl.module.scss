@@ -2,12 +2,13 @@
     border: none;
     border-radius: 0,;
     border-bottom: 1px solid var(--primary-black);
-    font-size: var(--text-xs);
+    font-size: var(--text-base);
 }
 
 .formControl::placeholder {
     font-weight: 500;
-    font-size: var(--text-xs)
+    font-size: var(--text-base);
+    color: var(--primary-grey)
 }
 
 .formControl:focus {
@@ -34,4 +35,15 @@
 .error, .error::placeholder {
     color: var(--secondary-red);
     border-color: var(--secondary-red);
+}
+
+@media (min-width: 1200px) {
+    .formControl {
+        font-size: 28px;
+    }
+
+    .formControl::placeholder {
+        font-weight: 500;
+        font-size: 28px;
+    }
 }
