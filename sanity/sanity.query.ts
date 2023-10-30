@@ -17,7 +17,7 @@ export const getJobs = ({
     { type: jobType, search },
     {
       next: {
-        revalidate: 3600,
+        revalidate: 60,
       },
     }
   );
@@ -29,7 +29,7 @@ export const getJob = (id: string) =>
     { id },
     {
       next: {
-        revalidate: 3600,
+        revalidate: 60,
       },
     }
   );
@@ -40,7 +40,7 @@ export const getPrivacyPolicy = () =>
     {},
     {
       next: {
-        revalidate: 3600,
+        revalidate: 60,
       },
     }
   );
@@ -51,7 +51,7 @@ export const getJournalsForMain = () =>
     {},
     {
       next: {
-        revalidate: 3600,
+        revalidate: 60,
       },
     }
   );
@@ -62,7 +62,7 @@ export const getJournalsForSidebar = () =>
     {},
     {
       next: {
-        revalidate: 3600,
+        revalidate: 60,
       },
     }
   );
@@ -73,7 +73,7 @@ export const getJournal = (id: string) =>
     { id },
     {
       next: {
-        revalidate: 3600,
+        revalidate: 60,
       },
     }
   );
