@@ -4,6 +4,7 @@ import styles from "@/src/app/(app)/privacy-policy/privacy-policy.module.scss";
 
 const PrivacyPolicyPage = async () => {
   const data = await getPrivacyPolicy();
+  if (!data?.content) return null;
   const components = {
     block: {
       h1: (props: any) => <h1 className={styles.h1}>{props.children}</h1>,
