@@ -11,6 +11,7 @@ import StickyFooter from "@/src/components/StickyFooter";
 import Tab from "@/src/components/Tab";
 import { jobTypesColor } from "@/src/constants";
 import type { Job } from "@/src/types";
+import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import { useState } from "react";
 import { Col, Container, Row, Stack } from "react-bootstrap";
@@ -95,7 +96,8 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
             <Row className="gap-4">
               <Row className="lh-sm">
                 <div className={styles.textSubtitle}>Job description:</div>
-                <div>{description}</div>
+                {/* <div>{description}</div> */}
+                <PortableText value={description as any} />
               </Row>
 
               <Row className="lh-sm">

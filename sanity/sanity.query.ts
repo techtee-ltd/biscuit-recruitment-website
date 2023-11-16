@@ -13,7 +13,7 @@ export const getJobs = ({
   const jobType = type === jobTypes.all ? "*" : type;
 
   return client.fetch(
-    groq`*[_type == 'job' && type match $type && _score > 0]| score(title match $search) {_id, title, description, type}`,
+    groq`*[_type == 'job' && type match $type && _score > 0]| score(title match $search) {_id, title, summaryDescription, type}`,
     { type: jobType, search },
     {
       next: {

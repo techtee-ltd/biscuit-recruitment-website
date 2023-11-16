@@ -6,6 +6,7 @@ export type JobType = (typeof jobTypes)[keyof typeof jobTypes];
 export type Job = {
   _id: string;
   title: string;
+  summaryDescription: string;
   description: string;
   type: string;
   responsibilities: string[];
