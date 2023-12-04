@@ -147,7 +147,6 @@ const job = {
       title: "Closing Date",
       type: "datetime",
       description: "Deadline for applications",
-      validation: (Rule: any) => Rule.required(),
     },
     {
       name: "keywords",
