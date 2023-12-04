@@ -96,7 +96,9 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
             <Row className="gap-4">
               <Row className="lh-sm">
                 <div className={styles.textSubtitle}>Job description:</div>
-                <PortableText value={description as any} />
+                <div className={styles.portableTextContainer}>
+                  <PortableText value={description as any} />
+                </div>
               </Row>
             </Row>
           </Col>
