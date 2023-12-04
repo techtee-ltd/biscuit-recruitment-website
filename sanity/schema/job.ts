@@ -51,6 +51,13 @@ const job = {
       of: [{ type: "reference", to: [{ type: "sector" }] }],
     },
     {
+      name: "consult",
+      title: "Consult",
+      description: "consult for the job",
+      type: "reference",
+      to: [{ type: "consult" }],
+    },
+    {
       name: "jobRef",
       type: "string",
       title: "Job Ref",
@@ -68,33 +75,6 @@ const job = {
           { title: "Permanent", value: "permanent" },
         ],
       },
-    },
-    {
-      name: "responsibilities",
-      type: "array",
-      of: [{ type: "string" }],
-      title: "Job Responsibilities",
-      description: "List the tasks and duties for the job.",
-      validation: (Rule: any) =>
-        Rule.required()
-          .min(1)
-          .error("At least one responsibility is required."),
-    },
-    {
-      name: "qualifications",
-      type: "array",
-      of: [{ type: "string" }],
-      title: "Job Qualifications",
-      description: "List the qualifications needed for the job.",
-      validation: (Rule: any) =>
-        Rule.required().min(1).error("At least one qualification is required."),
-    },
-    {
-      name: "benefits",
-      type: "array",
-      title: "Benefits",
-      of: [{ type: "string" }],
-      description: "Array of job benefits",
     },
     {
       name: "location",

@@ -1,0 +1,29 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 10px; // Adjust the padding as needed
+  margin-top: 20px; // Adjust the margin-top as needed
+  align-items: center;
+
+  & > * {
+    margin: 0 5px; // Adjust the margin between buttons as needed
+  }
+
+  // Add more styling if needed for your Tab component
+  // For demonstration purposes, assuming a basic style for the Tab component
+  .tab {
+    // Define your Tab styling here
+    // For example:
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 8px;
+    cursor: pointer;
+    &:hover {
+      background-color: #e0e0e0;
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

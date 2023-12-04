@@ -17,7 +17,7 @@ import { useState } from "react";
 import { Col, Container, Row, Stack } from "react-bootstrap";
 
 const JobsIdClientComponent = ({ job }: { job: Job }) => {
-  const { title, description, responsibilities, qualifications, type } = job;
+  const { title, description, type } = job;
 
   const [showApplyModal, setShowApplyModal] = useState(false);
 
@@ -96,31 +96,7 @@ const JobsIdClientComponent = ({ job }: { job: Job }) => {
             <Row className="gap-4">
               <Row className="lh-sm">
                 <div className={styles.textSubtitle}>Job description:</div>
-                {/* <div>{description}</div> */}
                 <PortableText value={description as any} />
-              </Row>
-
-              <Row className="lh-sm">
-                <div className={styles.textSubtitle}>
-                  Responsibilities include but are not limited to:
-                </div>
-                {responsibilities.map((i, index) => (
-                  <div key={i + index} className={styles.textBody}>
-                    <span style={{ fontSize: "24px" }}>&bull;</span> {i}
-                  </div>
-                ))}
-              </Row>
-              <Row className="lh-sm">
-                <Col xs={12}>
-                  <div className={styles.textSubtitle}>Qualifications:</div>
-                </Col>
-                <Col xs={12}>
-                  {qualifications.map((i, index) => (
-                    <div key={i + index} className={styles.textBody}>
-                      <span style={{ fontSize: "24px" }}>&bull;</span> {i}
-                    </div>
-                  ))}
-                </Col>
               </Row>
             </Row>
           </Col>
