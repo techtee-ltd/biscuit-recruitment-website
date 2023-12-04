@@ -38,10 +38,7 @@ const job = {
       title: "Job Description",
       description: "Provide a brief summary about the job.",
       validation: (Rule: any) =>
-        Rule.required()
-          .error("A description is required.")
-          .max(1000)
-          .warning("Description is too long!"),
+        Rule.required().error("A description is required."),
     },
     {
       name: "sector",
