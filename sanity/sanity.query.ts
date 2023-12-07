@@ -30,7 +30,6 @@ export const getJobs = async ({
       )) || []
     );
   }
-
   return [];
 };
 
