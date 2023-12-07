@@ -52,14 +52,16 @@ const JournalIdPage = async ({ params }: { params: { id: string } }) => {
             <Col lg={9}>
               <Row>
                 <Col xs={12}>
-                  <Image
-                    src={urlFor(coverImage).url()}
-                    alt="image"
-                    width="0"
-                    height="0"
-                    sizes="100vw"
-                    style={{ width: "100%", height: "auto" }}
-                  />
+                  {coverImage && (
+                    <Image
+                      src={urlFor(coverImage).url()}
+                      alt="image"
+                      width="0"
+                      height="0"
+                      sizes="100vw"
+                      style={{ width: "100%", height: "auto" }}
+                    />
+                  )}
                 </Col>
                 <Col xs={12}>
                   <PortableText value={content} components={components} />

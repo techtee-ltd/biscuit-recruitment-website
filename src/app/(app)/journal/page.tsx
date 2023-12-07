@@ -5,6 +5,7 @@ import {
 } from "@/sanity/sanity.query";
 import styles from "@/src/app/(app)/journal/journal.module.scss";
 import Tab from "@/src/components/Tab";
+import { getTextFromBlocks } from "@/src/helpers/getTextFromBlock";
 import { Journal } from "@/src/types";
 import { PortableText } from "@portabletext/react";
 import dayjs from "dayjs";
@@ -32,17 +33,19 @@ const JournalPage = async () => {
               return (
                 <Col key={_id} md={4}>
                   <Link href={`/journal/${_id}`}>
-                    <Image
-                      src={urlFor(coverImage).url()}
-                      alt="image"
-                      width="0"
-                      height="0"
-                      sizes="100vw"
-                      style={{ width: "100%", height: "auto" }}
-                    />
+                    {coverImage && (
+                      <Image
+                        src={urlFor(coverImage).url()}
+                        alt="image"
+                        width="0"
+                        height="0"
+                        sizes="100vw"
+                        style={{ width: "100%", height: "auto" }}
+                      />
+                    )}
                     <h2 className={styles.title}>{title}</h2>
                     <div className={styles.description}>
-                      {subtitle ? subtitle : <PortableText value={content} />}
+                      {subtitle ? subtitle : getTextFromBlocks(content)}
                     </div>
                   </Link>
                 </Col>

@@ -9,7 +9,7 @@ import { Stack } from "react-bootstrap";
 import type { Job } from "@/src/types";
 
 const JobCard = ({ jobPost }: { jobPost: Job }) => {
-  const { _id, title, description, type } = jobPost;
+  const { _id, title, summaryDescription, type } = jobPost;
   return (
     <div className={styles.jobCard}>
       <Stack gap={2}>
@@ -24,7 +24,7 @@ const JobCard = ({ jobPost }: { jobPost: Job }) => {
         </div>
         <div className={styles.title}>{title}</div>
 
-        <div className={styles.description}>{description}</div>
+        <div className={styles.description}>{summaryDescription}</div>
       </Stack>
       <Link href={`/jobs/${_id}`}>
         <Tab variant="full">See More</Tab>

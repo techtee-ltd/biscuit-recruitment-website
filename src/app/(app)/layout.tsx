@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        <LoadingPage>{children}</LoadingPage>
+        {children}
         <Footer />
         <StickyFooter isGlobalScope={true} />
       </body>

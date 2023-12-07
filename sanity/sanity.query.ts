@@ -1,26 +1,36 @@
 import { jobTypes } from "@/src/constants";
 import { groq } from "next-sanity";
 import client from "./sanity.client";
+import { cache } from "react";
 
-export const getJobs = ({
+export const getJobs = async ({
   type,
   searchValue,
+  pageIndex,
+  limit,
 }: {
   type?: string;
   searchValue?: string;
+  pageIndex: number;
+  limit: number;
 }) => {
-  const search = "*" + searchValue + "*";
-  const jobType = type === jobTypes.all ? "*" : type;
+  if (client) {
+    const search = "*" + searchValue + "*";
+    const jobType = type === jobTypes.all ? "*" : type;
 
-  return client.fetch(
-    groq`*[_type == 'job' && type match $type && _score > 0]| score(title match $search) {_id, title, description, type}`,
-    { type: jobType, search },
-    {
-      next: {
-        revalidate: 60,
-      },
-    }
-  );
+    return (
+      (await client.fetch(
+        groq`*[_type == 'job' && type match $type && _score > 0 && status == true]| score(title match $search)[$pageIndex...$limit] {_id, title, summaryDescription, type}`,
+        { type: jobType, search, pageIndex, limit },
+        {
+          next: {
+            revalidate: 60,
+          },
+        }
+      )) || []
+    );
+  }
+  return [];
 };
 
 export const getJob = (id: string) =>
@@ -47,7 +57,7 @@ export const getPrivacyPolicy = () =>
 
 export const getJournalsForMain = () =>
   client.fetch(
-    groq`*[_type == "journal"]| order(_createdAt desc)[0...3]{_id, title, subtitle, coverImage, content}`,
+    groq`*[_type == "journal"]| order(_createdAt desc){_id, title, subtitle, _createdAt}`,
     {},
     {
       next: {
@@ -58,7 +68,7 @@ export const getJournalsForMain = () =>
 
 export const getJournalsForSidebar = () =>
   client.fetch(
-    groq`*[_type == "journal"]| order(_createdAt desc)[3...11]{_id, title, subtitle, _createdAt}`,
+    groq`*[_type == "journal"]| order(_createdAt desc)[0...3]{_id, title, subtitle, coverImage, content}`,
     {},
     {
       next: {
