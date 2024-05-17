@@ -39,6 +39,9 @@ const structure: StructureResolver = (
       S.listItem()
         .title("Sector")
         .child(S.documentTypeList("sector").title("Sector")),
+      S.listItem()
+        .title("Pages")
+        .child(S.documentTypeList("pages").title("Pages")),
     ]);
 };
 
