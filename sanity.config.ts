@@ -27,7 +27,6 @@ const structure: StructureResolver = (
         .child(
           S.documentTypeList("job")
             .title("Jobs by Status")
-            .filter("status == false")
         ),
       S.listItem().title("Consults").child(S.documentTypeList("consult")),
       S.listItem()
@@ -39,6 +38,9 @@ const structure: StructureResolver = (
       S.listItem()
         .title("Sector")
         .child(S.documentTypeList("sector").title("Sector")),
+      S.listItem()
+        .title("Pages")
+        .child(S.documentTypeList("pages").title("Pages")),
     ]);
 };
 

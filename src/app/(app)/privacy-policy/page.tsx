@@ -12,6 +12,7 @@ const PrivacyPolicyPage = async () => {
       h3: (props: any) => <h3 className={styles.h3}>{props.children}</h3>,
     },
   };
+
   return (
     <div className={styles.container}>
       <PortableText value={data.content} components={components} />
