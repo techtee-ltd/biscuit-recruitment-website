@@ -105,6 +105,8 @@ const PageItems = ({ pageData }: { pageData: PageSection }) => {
 
 const PhilosophyPage = async () => {
   const pageData = await getData("philosophy");
+
+  if (!pageData) return null;
   return (
     <Row className={`row-gap-5 ${styles.container}`}>
       <Row>

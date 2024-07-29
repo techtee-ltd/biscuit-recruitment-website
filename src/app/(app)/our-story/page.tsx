@@ -118,7 +118,7 @@ const OurStoryPage = async () => {
     "Marketing Assistants and PR Coordinators",
     "Front of House Receptionists",
   ];
-  console.log(pageData);
+  if (!pageData) return null;
   return (
     <div className={styles.container}>
       <Row>

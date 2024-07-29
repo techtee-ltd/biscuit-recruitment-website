@@ -27,6 +27,7 @@ export const pages = defineType({
       title: "Page Items",
       name: "pageItems",
       type: "array",
+      // @ts-ignore
       of: [defineArrayMember({ type: "pageSection" })],
     }),
   ],

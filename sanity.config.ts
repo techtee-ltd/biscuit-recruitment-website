@@ -27,7 +27,6 @@ const structure: StructureResolver = (
         .child(
           S.documentTypeList("job")
             .title("Jobs by Status")
-            .filter("status == false")
         ),
       S.listItem().title("Consults").child(S.documentTypeList("consult")),
       S.listItem()
